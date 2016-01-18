@@ -1,0 +1,83 @@
+\documentclass{article} 
+\usepackage{amsmath}
+\usepackage{amsthm} 
+\usepackage{graphicx} 
+\usepackage{tikz}
+% Options for amsthm \newtheorem*{thm}{Theorem} \newtheorem*{ex}{Exercise} \newtheorem*{cor}{Corollary} \newtheorem{lem}{Lemma}
+\newenvironment{solution}
+{\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+\title{Homework 1} \author{Jeremy Benedek} \date{January 17, 2016}
+\begin{document} \maketitle
+
+\begin{ex}2.2     Draw an abstracted picture that corresponds to the Konigs-berg Bridge Problem. \end{ex}
+\begin{solution}    
+\begin{tikzpicture}
+% Vertices
+\node[circle, draw](a) at (2,1){A};
+\node[circle, draw](c) at (2,5){C};
+\node[circle, draw](b) at (2,3){B};
+\node[circle, draw](d) at (3,3){D};
+
+% Edges
+\draw [ultra thick] (a) -- (b);
+\draw [ultra thick] (b) -- (c);
+\draw (a) -- (d);
+\draw (b) -- (d);
+\draw (d) -- (c);
+\end{tikzpicture}
+$NOTE:$ Thick lines represent 2 bridges.
+\end{solution}
+
+\begin{ex}2.6     Imagine a dinner party at which each of the participants shakes the hand of some of the other participants. Show how to create a graph that represents the situation. Let the vertices correspond to people and the edges correspond to handshakes. What would it mean for this graph to have multiple edges? What would it mean for one vertex to have no edges?  \end{ex}
+\begin{solution}     Multiple edges represent multiple hand shakes.\\
+No edges represent no handshakes. \\
+You would construct this graphically by starting with people as verticies and than map out handshakes by adding an edge.
+
+\begin{tikzpicture}
+% Vertices
+\node[triangle, draw](a) at (2,1){Bob};
+\node[triangle, draw](b) at (2,3){Tom};
+\node[triangle, draw](d) at (4,3){Jim};
+\node[triangle, draw](c) at  (6,3){Walter};
+
+% Edges
+\draw [ultra thick] (a) -- (b);
+\draw (a) -- (d);
+\draw (b) -- (d);
+\draw (a) -- (c);
+\end{tikzpicture}
+\\$NOTE:$ Thick lines represent multiple edge, i.e. multiple handshakes.
+
+\end{solution}
+
+\begin{ex}2.7     Carefully, using the definitions we have just chosen, construct a graph for the Konigsberg Bridge Problem, $K= (V,E)$. Give each vertex a label; then, using these labels, write $V$ and $E$ for this graph.  \end{ex}
+\begin{solution}     $V=\{a,b,c,d\}$, $E=\{\{a,b\} \{b,d\} \{b,c\} \{a,b\} \{b,d\}, \{d,c\}, \{a, c\}\}$ \end{solution}
+
+\begin{ex}2.9     1. Given a graph $G= (V,E)$, describe a procedure for computing the degrees of the vertices without drawing a picture of the graph.\par 2. Compute the degrees of the vertices in the Konigsberg Bridge Problem using the procedure you described in the previous part of this exercise; make sure those answers agree with the numbers you get by just looking at your visual representation. \par 3. Write out a specific example of a graph with at least five vertices and compute the degree of each vertex and the total degree of the graph.  \end{ex}
+\begin{solution}     1. You could compute the degree of a vertex by looking at the endpoints of the edges. Each endpoint is one degree.
+\\2. $Deg(a)=3$; $Deg(b)=3$; $Deg(c)=3$; $Deg(d)=4$
+\\3. $G=\{ \{a,b\}, \{a,c\}, \{d,a\}, \{a,c\}, \{c,d\}, \{d,e\} \}$
+\\ $Deg(a)=4$; $Deg(b)=1$; $Deg(c)=3$; $Deg(d)=3$; $Deg(e)=1$
+\\Total Degree$=12$
+\end{solution}
+
+
+\linebreak
+\begin{thm}2.10     The total degree of any graph is even.\end{thm}
+\begin{proof}     A graph is a set of edges. \\
+     An edge contains 2 endpoints. \\
+     2 times any number is even, so 2 times the number of edges is even \\
+     The total degree of the graph is 2 times the number of edges. \\
+     Therefore, the toal degree is even.  \end{proof}
+
+\begin{thm}Corollary 2.11     Let $G$ be a graph, then the number of vertices in $G$ with odd degree is even. \end{thm}
+\begin{proof}     The total degree of $G$ is even \\
+Assume towards contradiction that $G$ has an odd amount  verticies with odd degree\\
+An even number can be represented as $2n$ where $n \in \mathbb{Z}$ \\
+So the total degree of $G$ is $2n\cdot k + (2n+1)$ where $k$ is the amount of verticies with even degree.\\
+Since $2n\cdot k + 2n$ is even, $2n\cdot k + 2n + 1$ is odd, so the total degree of $G$ is odd \\
+This contradicts Theorem 2.10, so $G$ must have an even amount of verticies with odd degree. 
+\end{proof}
+
+\end{document}
