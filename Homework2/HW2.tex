@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Homework 2}
+\author{Jeremy Benedek}
+\date{January 24, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{ex}[number]
+    Exercise statement here.
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{thm}[number]
+    Theorem statement here.
+\end{thm}
+
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\end{document}
