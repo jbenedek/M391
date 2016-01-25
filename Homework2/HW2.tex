@@ -26,12 +26,19 @@
 	and set notation, and explain why you list is complete. If no graph can exist with the given properties, state why not. 
 	\begin{enumerate} 
 	  \item $V = \{v,w,x,y\}$ with $deg(v) = 2$ , $deg(w) = 1$, $deg(x) = 5$, $deg(y) = 0$
-          \item $V = \{a,b,c,d\}$ with $deg(a) = 1$, $deg(b) = 4$, $deg(c) = 2$, $deg(d) = 2$
+	  \item $V = \{a,b,c,d\}$ with $deg(a) = 1$, $deg(b) = 4$, $deg(c) = 2$, $deg(d) = 2$
           \item $V = \{v_1,v_2,v_3,v_4\}$ with $deg(v_1) = 1$, $deg(v_2) = 3$, $deg(v_3) = 2$, $deg(v_4) = 5$
        \end{enumerate}
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	\begin{enumerate}
+	  \item It can be realized as a graph. There are many graphs that fit this description. Here is the set notation of one of them. $G=(V,E)$ $E=\{
+	\{v,v\}, \{w,x\}, \{x,x\}, \{x,x\}\}$ Another graph is if $E=\{ \{w,x\}, \{x,x\}, \{v,x\}, \{v,x\}\}$ Please see after the typeset portion for
+	hand drawn graphs. I know you want them typeset, but I was running out of time and having difficulties drawing them in LaTeX , so I hand drew 
+	them so you can at least see them. Sorry. 
+	  \item It cannot be realized as a graph. The total degree is odd (Total degree is 9), and thus, following Theorem 2.10, it is not a graph, since the Theorem states that the total degree of any graph is even. 
+	  \item It cannot be realized as a graph. The total degree is odd (Total degree is 11), and thus, following Theorem 2.10, it is not a graph, since the Theorem states that the total degree of any graph is even.
+	\end{enumerate}
 \end{solution}
 
 \begin{ex}[2.14]
@@ -39,7 +46,10 @@
 	If so, prove it. If not, give a counter-example.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	Given Corollary 2.11, the graph will have an even number of vertex that have an odd degree. If every vertex has an even degree, loops can be drawn around each vertex $n$ amount of times, 
+	if $n =$ Total degree of the vertex divided by 2.  If the degree of a vertex is odd (so expressed in the form of $2m + 1$, where m is an integer), you can draw $m$ amounts of loops around the vertex and then connect that 
+	vertex to some other vertex with odd degree, because there will always be an even amount of vertices with odd degree (Cor. 2.11). Thus any $G$ can be realized by drawing a graph with a various amount of loop on vertices
+	with even degree and drawing edges that connect vertices with odd degree with other vertices with odd degree.  
 \end{solution}
 
 \begin{ex}[2.20]
@@ -47,22 +57,28 @@
 	Try to be systematic and try to isolate some principles that seem pertinent to traceability.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+    I believe my list is complete because I started with graphs of 2 verticies and drew all possibilites I could think of, and then added one vertex and 
+	drew everything I could think of. I tried to get them all, but I may have missed some graphs if I didn't think of that way of drawing. My system 
+	to approach this is good, but my actually execuation may not be because I can't think of everything. A traceable graph if all vertices are of  even degree, graphs that have some odd degree vertices may be traceable. If the degree of mutliple vertices is 1, it is not traceable. This isn't an exhaustive set of rules relating to traceability, but a start. The graphs of these are attached after this HW assignment.  
 \end{solution}
 
 
 \begin{thm}[2.22]
-	Let $G$ be a garph that has a walk between vertices $v$ and $w$. Then $G$ has a walk between vertices $v$ and $w$ that does not use repeated edges. \end{thm}
+	Let $G$ be a graph that has a walk between vertices $v$ and $w$. Then $G$ has a walk between vertices $v$ and $w$ that does not use repeated edges. \end{thm}
 
-\begin{proof}
-    Write your proof here.
+\begin{proof}	
+	Every edge contains 2 vertices. An edge can only be repeated if both vertices are used together in another edge. By definition, the verticie
+	in a walk are subsequent, so they are not reused. So, a walk between 2 vertices does not use repeated edges since they are subsequent.
+
+%	then let $W: v_1, e_1, ... v_j, e_j, v_j, e_j, v_k, e_k$. If you remove the loops from this walk, $W: v_1, e_1, ... v_j, e_j, v_k, e_k$
 \end{proof}
 
 \begin{thm}[2.23]
 	Let $G$ be a graph and $W: v_0, e_1, ..., e_n, v_n$ a walk in $G$ such that the vertices $v_i$ are all distinct. Then $W$ has no repeated edges. \end{thm}
 
 \begin{proof}
-    Write your proof here.
+    If an edge is repeated in a walk, the $e_i$ must occur more than 1 time. By definition, and edge connects 2 vertices. For an edge to occur more than
+	once, vertices must be repeated. So $v_i$ is no longer distinct. Therefore, a walk has no repeated edges if the vertices are not repeated. 
 \end{proof}
 
 \begin{thm}[2.25]
@@ -75,7 +91,16 @@
 \end{thm}
 
 \begin{proof}
-    Write your proof here.
+	$v$ is connected to itself if there is a walk from $v$ to $v$. By defintion 2.6, $W: v$ is a walk. So $v$ is connected to itself. \qed
+	\\
+	Assume there is a walk between $u$ and $v$ and another walk between $v$ and $w$. So, $W: v_1, e_1, ... v_j, e_j, v_k, e_k, v_l, e_l$, where $v_j$ is vertex u, $v_k$ is vertex v, $v_l$ is vertex w. $W$ contains a walk between $u$ and $v$ and a walk between $v$ and $w$ and finally, a walk between $u$ and $w$,
+so $u$ is connected to $w$. \qed
+	\\
+	Assume $v$ is connected to $w$, so there is a walk between $v$ and $w$. Since a walk is a finite set of adjacent vertices and edges, being adjacent 
+	does not depend on order, just that they are next to each other in some direction. For an endpoint, the order of the vertices do not matter, so
+	being adjacent is a symmetric property. So, there is a walk between $w$ and $v$. Therefore, $w$ is connected to $v$, if $v$ is connected to
+	$w$. 
+  
 \end{proof}
 
 
