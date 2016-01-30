@@ -3,6 +3,8 @@
 \usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{amssymb}
+
 
 % Options for amsthm
 \newtheorem*{thm}{Theorem}
@@ -26,24 +28,80 @@
 		When I am stuck on a math problem or proof, I like to work through examples of the argument to fully convince myself that
 		what I am proving is true. If that doesn't work, then I like to think about the goals for both the entire argument 
 		and whatever step I am stuck on. Once I have a goal to
-		work through, the problem is more manageable. If that doesn't work, then I think about what is stumping me,
-		and how can I get over the hurdle. Finally, if none of that works, I double check my work looking for errors
+		work through, the problem is more manageable since I can see what I need in order to move on. Goals also help, because if I am stuck
+		on one part, I know what I am supposed to get, but maybe not the actually manner to get it. If that is the case, I can pretend
+		that I did get it, and finish the proof. I can then later go back and work on the one part I was stuck on. 
+		If that doesn't work, then I think about what is stumping me and walk away and take a break, so when I come back to the problem, I 
+		hopefully have an idea of where to start.
+		Finally, if none of the previous tips work, I double check my work looking for errors
 		that would interfere with  me solving it, and if I don't see any, I restart the problem.  
 	\item[Part 2: Presentations] \hfil \\
 		To increase the clarity of a presentation, a presenter should write big and legibly so all students can see it. Additionally, 
 		a presenter should step back from the board occasionally to allow students to read what they just wrote, and also to explain 
-		the step they just wrote.  Finally, a presenter should be willing to answer questions from the audience.  
+		the step they just wrote. This process of stepping back also allows students to ask clarifing questions and maybe even spot
+		little notation errors or typos that the presenter didn't realize. The presenter should definetly explain their notation they used,
+		and this would be a good time to do so.  Finally, a presenter should be willing to answer questions 
+		from the audience.  
 	
 	\item[Part 3: Three Polished Proofs] \hfil \\
-		This is why this is interesting... show proof
+		Theorem 2.10 is a proof who's result is mathematically important. This idea of total degree being even does came up a some furthur exercises. Additionally, Now that I know a Euler Circuit requires all verticies to be of even, positive degree, this has made me wonder what is so special with even numbers, because we are seeing 2 interesting problems (what is a graph, and what is a Euler circuit) hinge on even numbers.
+		
+		\begin{thm}2.10     The total degree of any graph is even.\end{thm}
+ 		 \begin{proof}  A graph is a pair of sets, one set contains all vertices in the graph, and the other is a set of all edges in the graph.
+       				The degree of a vertex is the number of times a vertex is an endpoint for any edge in the graph. 
+				The total degree of a graph is the sum of the degree of all vertices in the graph. 
+				An edge contains 2 endpoints. 
+				2 times any number is even, so 2 times the number of edges is even 
+				The total degree of the graph is 2 times the number of edges, since each has 2 endpoints, and each endpoint is a vertex. 
+       				Therefore, the toal degree is even.  \end{proof}
 
-		\begin{thm}[number]
-    			Theorem statement here.
-		\end{thm}
+		Theorem 2.25 has a interesting and important argument, the idea of an equivalance relation and various proporties of relations.	
+		Personally, I have previous experience with relations, and I like doing work involving them, so this is part of the reason the argument
+		is interesting. 
 
-		\begin{proof}
-    			Write your proof here.
-		\end{proof}
+		\begin{thm}[2.25]
+		          Let $G$ be a graph with vertices $u$, $v$, and $w$.
+        	  \begin{enumerate}
+        	    \item The vertex $v$ is connected to itself.
+       		    \item If $u$ is connected to $v$ and $v$ is connected to $w$, then $u$ is connected to $w$.
+        	    \item If $v$ is connected to $w$, then $w$ is connected to $v$.
+         	 \end{enumerate}
+ 		 \end{thm}
+ 		  \begin{proof}
+        		$v$ is connected to itself if there is a walk from $v$ to $v$. By defintion 2.6, $W: v$ is a walk. So $v$ is connected to itself. \qed
+         		 \\
+         		Assume there is a walk between $u$ and $v$ and another walk between $v$ and $w$. 
+			So, $W: v_1, e_1, ... v_j, e_j, v_k, e_k, v_l, e_l$, where $v_j$     is vertex u, 
+			$v_k$ is vertex v, $v_l$ is vertex w. $W$ contains a walk between $u$ and $v$ and a 
+			walk between $v$ and $w$ and finally, a walk between $u    $ and $w$,  so $u$ is connected to $w$. \qed
+         		 \\
+         		Assume $v$ is connected to $w$, so there is a walk between $v$ and $w$. 
+			Since a walk is a finite set of adjacent vertices and edges, being adjacent does not depend on order, 
+			just that they are next to each other in some direction. For an endpoint, the order of the vertices do not matter.
+			So, if there is a walk between $v$ and $w$, then there is a walk between $w$ and $v$. Therefore, $w$ is connected to $v$, 
+			since $v$ is connected to $w$.
+ 		\end{proof}
+	
+		My proof for Corollary 2.11 has good style. This Corollary was proven using proof by contradiction, definitions were unpacked
+		(especially the definitions of even and odd), the arithmetic I do is clean and easy to follow. All three characteristics are 
+		characteristics of good style.
+	
+		\begin{thm}Corollary 2.11     Let $G$ be a graph, then the number of vertices in $G$ with odd degree is even. \end{thm}
+ 		\begin{proof}    According to Theorem 2.10,  the total degree of $G$ is even 
+ 			Assume towards contradiction that $G$ has an odd amount verticies with odd degree
+  			An even number can be represented as $2n$ where $n \in \mathbb{Z}$ an odd number can be represented as $2n + 1$ where 
+			$n \in \mathbb{Z}$
+			The total degree of $G$ is the sum of the degree of all vertices, both with even degree and odd degree.
+			A vertex with even degree has degree $2n$. A vertex with odd degree has degree $2n + 1$  
+  			So the total degree of $G$ is $2n\cdot k + (2n+1)\cdot j$ where $k$ is the amount of verticies with even degree and $j$
+			is the amount of vertices with odd degree.
+  			Using proporties of even and odd numbers, the addition of 2 even numbers is even, and the addition of an even number 
+			and an odd number is odd. Additionally, an even number times an even number is even, 
+			and an even number times an odd number is odd.
+			Since there is an odd number of vertices with odd degree $j$ is odd, so $(2n+1)\cdot j$ is odd. 
+			This number, added to $2n\cdot k$, which is even, will result in an odd number. Therefore, the 
+			total degree of $G$ is odd, which contradicts Theorem 2.10, so $G$ must have an even amount of verticies with odd degree.
+  		\end{proof}
 
 
 \end{description}
