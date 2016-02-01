@@ -27,7 +27,14 @@
 	\\ and prove your conjecture.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	$\sum\limits_{i=1}^n \frac{1}{n(n+1)} = \frac{k}{k+1}$ \\
+	Claim: The conjectured formula is correct.\\
+	Proof: Base $(n = 1)$ 
+	$\sum\limits_{i=1}^1 \frac{1}{n(n+1)}$ = $\frac{1}{2}$ = $\frac{1}{1+1}$
+	\\
+	Induction: Assume $\sum\limits_{i=1}^n \frac{1}{n(n+1)} = \frac{k}{k+1}$
+	So, $\sum\limits_{i=1}^{n+1} \frac{1}{n(n+1)} = \sum\limits_{i=1}^n \frac{1}{n(n+1)} + \sum\limits_{i=1}^i \frac{1}{n(n+1)}$
+	\\ $= \frac{k}{k+1} + \sum\limits_{i=1}^i \frac{1}{n(n+1)} = \frac{k}{k+1} + \frac{1}{2} = \frac {k + 1}{k + 2}$ \qed
 \end{solution}
 
 \begin{ex}[3.2.4]
@@ -35,7 +42,14 @@
 	is either even or odd.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	Base: $n=0$
+		0 is even since $0=2n$, $n \in \mathbb{Z}$\\
+		Induction: Assume $n$ is either even or odd. An odd number is a number that can be expressed $2n+1$, $n \in \mathbb{N}$. An even number is a number that can be expressed as $2n$, $n \in \mathbb{N}$
+		There are 2 cases: $n$ is even or $n$ is odd. If $n$ is even, $n+1$ is odd since $n=2k$, so $n+1 = 2k +1$, which is odd.
+		If $n$ is odd, $n+1$ is even since $n=2k+1$, so $n+1 = 2k + 1 + 1 = 2k +2 = 2(k+1)$, which is even. \qed
+		\\
+		Using this proof, every integer is either even or odd, since an even negative number can be expressed as $2n$, $n \in \mathbb{Z}$ since the negativity of the number does not affect multiplication.
+		The same is true for odd negative numbers, they can be expressed as  $2n+1$, $n \in \mathbb{Z}$. Therefore, all negative numbers are either odd or even, and thus all integers are either odd or even.
 \end{solution}
 
 \begin{ex}[3.2.5]
@@ -43,14 +57,27 @@
 	$n^3-n$.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	$m$ divides $n$ is the same as saying $n=km$, for some integer $k$.\\ 
+	Claim: For all $n \in \mathbb{N}$, 6 divides $n^3-n$. \\
+	Proof: Base case ($n = 0$):\\
+		$6 \mid 0^3 - 0$, so $0 = 6 * m$, $m \in \mathbb{Z}$.\\
+		Induction: Assume $6 \mid n^3 - n$. So, $n^3-n = 6m$, $m \in \mathbb{Z}$.
+		$(n+1)^3 - (n+1) = n^3 + 3n^2 + 2n = n(n+2)(n+1)$ 
+		$n(n+2)(n+1) = 6k, k\in \mathbb{Z}$ since for  $n$, $n+2$ or $n+1$ one of the terms must be divisible by 2, and another term must be divisible by 3, since the three terms are consecutive, so the product of the
+		three terms will be divisible by 6.
+		 
+\qed
+
 \end{solution}
 
 \begin{thm}[3.3.3]
 	Every reducible polynomial can be written as a product of irreducible polynomials.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Base: $n=1$ $A_1 x^1$ is not reducible, so it can be written as the product of itself and $x_0$.
+	\\
+	Induction: Assume for all previous polynomials with degree less or equal to than $n$ can be written as a product of irreducible polynomials.
+	so $P_{k+1}= A_{k+1}x^{k+1} =  A_{k+1}x^{k}x = x^k(A_{k+1}x)$ We can use our induction hypothesis since $k$ = $n$. So,$x^k$ is a irreducible polynomial, and $(A_{k+1}x)$ is also irreducible. 
 \end{proof}
 
 \begin{thm}[2.28]
@@ -58,7 +85,10 @@
 in $C$, then the subgraph $G^\prime= (V,E \setminus \{e\})$ is still connected.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+  Assume, towards contradiction, $G= (V,E)$ is a connected graph that does not contains a circuit. Also assume, $G^\prime= (V,E \setminus \{e\})$ is connected. 
+  Since $G$ is connected, there is a walk, $W: v_0, e_0, v_1, e_1, ... v_k-1, e_k, v_k$ 
+  If we removed an edge from $W$, then $W$ is no longer a walk between $v_0$ and $v_k$. In other words,  $G^\prime$, cannot still be connected, since there in not a walk between all vertices, so contradiction.
+  Therefore, if $G= (V,E)$ is connected, and $G^\prime= (V,E \setminus \{e\})$ is connected, then there is a circuit in $G$.
 \end{proof}
 
 \begin{thm}[2.29]
@@ -66,21 +96,27 @@ in $C$, then the subgraph $G^\prime= (V,E \setminus \{e\})$ is still connected.
 	even for every vertex $v$ of $C$.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	 Let $C$ be a subgraph of $G$ that consists of the vertices and edges that belong to a circuit in $G$. Consider taking a walk through $C$. Since $C$ is a circuit, for every time you walk into a vertex, 
+	 you must walk away from the vertex on another edge (since with a circuit, you must end at the same vertex you start with, and cannot repeat edges). So for every passage through a vertex, there  must be, at minimum, 
+	 2 edges with endpoints at that vertex. Therefore, for $n$ amount of passages through a vertex, there are $2n$ edges with endpoints at that vertex, so the degree of that vertex is $2n$, which is even.
 \end{proof}
 
 \begin{ex}[2.30]
 	Restate the Konigsberg Bridge Problem using our formal definitions.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	Does the graph produced by the Konigsberg bridge problem have an Euler circuit?
 \end{solution}
 
 \begin{thm}[2.31]
 	A graph $G$ has an Euler circuit if and only if it is connected and every vertex in $G$ has even, positive degree.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Let $G$ be a graph with an Euler circuit. Consider taking a walk through $G$. For every time you walk into a vertex, you must walk away from the vertex on another edge. So for every passage through a vertex, there
+	must be, at minimum, 2 edges with endpoints at that vertex. Therefore, for $n$ amount of passages through a vertex, there are $2n$ edges with endpoints at that vertex, so the degree of that vertex is $2n$, which is even.
+	By definition, a Euler circuit for graph $G$ is a circuit in $G$ that contains every vertex and every edge in $G$. So, an Euler circuit cannot occur without a circuit occurring. By definition, a circuit is a walk
+	with at least one edge, that begins and ends on the same vertex and never repeats edges. Since an Euler Circuit, must use all vertices, and a circuit is a walk, all vertices in $G$ must be connected to each other.
+	Therefore, a graph $G$  has an Euler circuit if and only if it is connected and every vertex in $G$ has even, positive degree. 
 \end{proof}
 
 \begin{ex}[2.33]
@@ -88,14 +124,17 @@ in $C$, then the subgraph $G^\prime= (V,E \setminus \{e\})$ is still connected.
 	answer thoroughly in ordinary English, or Old Prussian, if you prefer.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	You cannot cross over all 7 bridges, ending where you started, without crossing over the same bridge twice. The solution to this problem would be an Euler Circuit (that is a walk that starts
+	and ends at the same vertex, crosses over each bridge only 1 time, and uses all edges and vertices in the graph). A Euler circuit is only possible if and only if the graph is connected, and every vertex in 
+	the graph has even, positive degree. For the graph of this problem, there are vertices with odd degree (in fact all of them have odd degree), so an Euler Circuit is not possible. 
 \end{solution}
 
 \begin{ex}[2.34]
 	Solve the Paperperson’s Puzzle.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	This problem is solvable as all the vertices are connected and all have even degree. The solution for the problem is to start at the corner the papers were delivered, and proceed through the neighborhood. At all 4-way
+	intersections, you proceed straight. In other words, the only time you are turning is when the route actually curves, you do not turn where roads intersect. 
 \end{solution}
 
 
