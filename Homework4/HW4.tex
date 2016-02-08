@@ -22,59 +22,76 @@
 \maketitle
 
 \begin{thm}[2.35]
-    Theorem statement here.
+	A graph $G$ has an Euler path if and only if $G$ is connected and has zero or two vertices of odd degree and all other vertices have even,
+	positive degree.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Assume $G$ is connected, so there is a walk between all vertices. You can have either 0 or 2 odd degree vertices. If you have 0 
+	odd degree vertices, then you have an Euler circuit, which is an Euler path. Otherwise, you start at one of the odd degree vertices, walk
+	through the graph. You will then end at the other vertex of odd degree.
 \end{proof}
 
 \begin{ex}[2.36]
-    Exercise statement here.
+	Give an example of an graph with an Euler path but not an Euler Circuit. What must be true of any such example?
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	$G = (V,E)$, $V=\{A,B,C,D\}$, $E=\{ \{A,B\}, \{B,C\}, \{C,D\} \}$ \\ There must be 2 vertices of odd degree, for this to be true. 
 \end{solution}
 
 \begin{ex}[2.40]
-    Exercise statement here.
+	By drawing a few examples, explore the relationship between the number of degree one vertices of a tree and other features of the tree.
+	Make a conjecture and prove it.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	After drawing a few examples, a relations ship I saw was that the number of leaves must be greater than or equal than 2, while
+	also being less than or equal to the total number of edges. \\ 
+	\begin{proof} 	Consider the smallest tree possible, a tree with 2 vertices connected by 1 edge. Both vertices have a degree of 1, so they
+		are both leaves. So the least amount of leaves possible is 2. Next, consider some other tree. Besides the smallest tree,
+		each edge can contribute at most one leave. Therefore the maximum amount of leaves in a tree is equal to the amount of edges
+	      . \end{proof} 
 \end{solution}
 
 \begin{thm}[2.42]
-    Theorem statement here.
+	If $v$ and $w$ are distinct vertices of a tree $G$, then there is a unique walk with no repeated edges in $G$ from $v$ to $w$.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	A tree is a connected graph with no circuit. If you remove an edge, then the graph is no longer connected since there are no
+	circuits, so there is no other way for a walk to exist. So you have a unique walk between $v$ and $w$. Using Theorem 2.22,
+	since we have a walk, we have a walk with no repeated edges between $v$ and $w$.
+	
 \end{proof}
 
 \begin{cor}[2.43]
-    Theorem statement here.
-  \end{cor}
+	Suppose $G = (V,E)$ is a tree and $e$ is an edge in $E$. Then the subgraph $G\prime = (V,E \setminus \{e\})$ is not connected.   
+\end{cor}
 \begin{proof}
-    Write your proof here.
+	Assume towards contradiction $G^\prime$ is connected. Since there are no repeated edges (Thm. 2.42) and also no circuits, 
+	removing an edge will create a disconnect in the walk, making the graph not connected. Therefore, $G^\prime$ is not connected. 
 \end{proof}
 
 \begin{thm}[2.44]
-    Theorem statement here.
+	Let $G$ be a connected graph. Then there is a subtree, $T$ of $G$ that contains every vertex of $G$.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Start with graph $G$ and make a sub graph that contains no circuits. You now have a connected graph with no circuits, a tree. Since
+	$G$ was connected, you can make a subgraph with all vertices in $G$. This subgraph now contains all vertices of $G$, and is a tree.
 \end{proof}
 
 \begin{thm}[2.45]
-    Theorem statement here.
+	A subtree $T$ in a connected graph $G$ is a maximal tree if and only if $T$ contains every vertex of $G$. 
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Assume $T$ is a maximal tree. Then $T$ contains all non-circuit causing edges of $G$. Since it contains all edges that don't complete a circuit
+	all vertices of $G$ must be in $T$. Now assume $T$ contains every vertex of $G$. This is a requirement for $T$ to be a maximal tree, the other
+	being that any edge of $G$ not in $T$ causes $T$ to not be a tree. So, $T$ can only be a maximal tree if it contains every vertex of $G$. 
 \end{proof}
 
 \begin{ex}[2.47]
-    Exercise statement here.
+	Draw graphs of $K_3$, $K_4$, $K_5$, $K_{2,3}$, $K_{3,3}$, $K_{2,4}$. What appear to be planar graphs? Are any of them familiar?
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	 $K_3$, $K_4$, $K_{2,3}$, $K_{2,4}$ are planar. $K_5$ is the 5 station model and $K_{3,3}$ is the Utility problem. We've seen these 2 problems
+	 previously. See next page for the graphs of this exercise. 
 \end{solution}
 
 
