@@ -1,0 +1,97 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+\newtheorem{sch}{Scholium}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Homework $5$}
+\author{Jeremy Benedek}
+\date{Feburary 14, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{thm}[2.51]
+	Every connected graph can be created by starting with a single vertex and repeatedly adding one additional edge at a time to create increasingly larger connected subgraphs until the whole graph is created.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{sch}[2.52]
+	Let $G$ be a connected graph. Then $G$ can be constructed according to the previous theorem where all type (1) edges area added before any type (2) edge is added. If in addition $G$ is planar, this construction allows
+	us to redraw $G$ using these techniques such that each partial drawing is also planar.
+\end{sch}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{ex}[2.54]
+	Draw a graph using the two procedures detailed in the Constructing Connected Graphs Theorem. Create a chart that includes the number of vertices, number of edges, and number of faces at each stage. Do you notice any patterns?
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{thm}[2.55]
+	For a connected graph $G$ drawn in the plane, $|V| - |E| + |F| = 2$.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{cor}[2.56]
+	For a graph $G$ drawn in the plane with $n$ components, $|V| - |E| + |F| = n + 1$.
+\end{cor}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{cor}[2.58]
+	If $G$ is a tree with $n$ vertices, then $G$ has $n - 1$ edges.
+\end{cor}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{cor}[2.61]
+	The graph $K_5$ is not planar.
+\end{cor}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[2.63]
+	Any planar graph with no loops or multiple edges has a vertex of degree at most 5.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{ex}[2.64]
+	Theorem $2.63$ requires all of its hypotheses, of which there are three. For each hypothesis, find a counterexample to the theorem if that hypothesis were removed.
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{thm}[2.65]
+	The graph $K_{3,3}$ is not planar.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+
+\end{document}
