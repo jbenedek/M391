@@ -1,0 +1,103 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amssymb}
+
+
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Reflection $2$}
+\author{Jeremy Benedek}
+\date{FJanuary 19, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+	\item[Part 1: Useful Mistakes] \hfill \\
+		A lot of the mistakes I have made were mistakes I didn't originally notice, only until the grading process did I discover
+		the mistakes. These mistakes help me realize the rigor required for proofs. Some specific mistakes I have made,
+		are not properly doing if and only if proofs, I assume one side and prove the other, but I don't properly prove it by 
+		additionally assuming the other side and proving the first side. This is an easy mistake to correct in the future, I 
+		just need to finish the proof. Another mistake I make are in induction proofs, where I select
+		the wrong base case. This too is an easy mistake to fix, since arguably in an induction proof the base case is the trivial step
+		the real work comes from proving the claim works for the next item. I just need to double check the base case is indeed the correct
+		base case. Another mistake I have made a few times is assuming one thing, and then proving my assumption. This goes against the 
+		spirit of an implication, as I should assume something, and then prove something different. To remedy this, I need to be more mindful
+		while solving proofs. 
+
+	\item[Part 2: Types of Argument] \hfil \\
+	
+	\item[Part 3: Three Polished Proofs] \hfil \\
+		Theorem 2.10 is a proof who's result is mathematically important. This idea of total degree being even does came up a some furthur exercises. Additionally, Now that I know a Euler Circuit requires all verticies to be of even, positive degree, this has made me wonder what is so special with even numbers, because we are seeing 2 interesting problems (what is a graph, and what is a Euler circuit) hinge on even numbers.
+		
+		\begin{thm}2.10     The total degree of any graph is even.\end{thm}
+ 		 \begin{proof}  A graph is a pair of sets, one set contains all vertices in the graph, and the other is a set of all edges in the graph.
+       				The degree of a vertex is the number of times a vertex is an endpoint for any edge in the graph. 
+				The total degree of a graph is the sum of the degree of all vertices in the graph. 
+				An edge contains 2 endpoints. 
+				2 times any number is even, so 2 times the number of edges is even 
+				The total degree of the graph is 2 times the number of edges, since each has 2 endpoints, and each endpoint is a vertex. 
+       				Therefore, the toal degree is even.  \end{proof}
+
+		Theorem 2.25 has a interesting and important argument, the idea of an equivalance relation and various proporties of relations.	
+		Personally, I have previous experience with relations, and I like doing work involving them, so this is part of the reason the argument
+		is interesting. 
+
+		\begin{thm}[2.25]
+		          Let $G$ be a graph with vertices $u$, $v$, and $w$.
+        	  \begin{enumerate}
+        	    \item The vertex $v$ is connected to itself.
+       		    \item If $u$ is connected to $v$ and $v$ is connected to $w$, then $u$ is connected to $w$.
+        	    \item If $v$ is connected to $w$, then $w$ is connected to $v$.
+         	 \end{enumerate}
+ 		 \end{thm}
+ 		  \begin{proof}
+        		$v$ is connected to itself if there is a walk from $v$ to $v$. By defintion 2.6, $W: v$ is a walk. So $v$ is connected to itself. \qed
+         		 \\
+         		Assume there is a walk between $u$ and $v$ and another walk between $v$ and $w$. 
+			So, $W: v_1, e_1, ... v_j, e_j, v_k, e_k, v_l, e_l$, where $v_j$     is vertex u, 
+			$v_k$ is vertex v, $v_l$ is vertex w. $W$ contains a walk between $u$ and $v$ and a 
+			walk between $v$ and $w$ and finally, a walk between $u    $ and $w$,  so $u$ is connected to $w$. \qed
+         		 \\
+         		Assume $v$ is connected to $w$, so there is a walk between $v$ and $w$. 
+			Since a walk is a finite set of adjacent vertices and edges, being adjacent does not depend on order, 
+			just that they are next to each other in some direction. For an endpoint, the order of the vertices do not matter.
+			So, if there is a walk between $v$ and $w$, then there is a walk between $w$ and $v$. Therefore, $w$ is connected to $v$, 
+			since $v$ is connected to $w$.
+ 		\end{proof}
+	
+		My proof for Corollary 2.11 has good style. This Corollary was proven using proof by contradiction, definitions were unpacked
+		(especially the definitions of even and odd), the arithmetic I do is clean and easy to follow. All three characteristics are 
+		characteristics of good style.
+	
+		\begin{thm}Corollary 2.11     Let $G$ be a graph, then the number of vertices in $G$ with odd degree is even. \end{thm}
+ 		\begin{proof}    According to Theorem 2.10,  the total degree of $G$ is even 
+ 			Assume towards contradiction that $G$ has an odd amount verticies with odd degree
+  			An even number can be represented as $2n$ where $n \in \mathbb{Z}$ an odd number can be represented as $2n + 1$ where 
+			$n \in \mathbb{Z}$
+			The total degree of $G$ is the sum of the degree of all vertices, both with even degree and odd degree.
+			A vertex with even degree has degree $2n$. A vertex with odd degree has degree $2n + 1$  
+  			So the total degree of $G$ is $2n\cdot k + (2n+1)\cdot j$ where $k$ is the amount of verticies with even degree and $j$
+			is the amount of vertices with odd degree.
+  			Using proporties of even and odd numbers, the addition of 2 even numbers is even, and the addition of an even number 
+			and an odd number is odd. Additionally, an even number times an even number is even, 
+			and an even number times an odd number is odd.
+			Since there is an odd number of vertices with odd degree $j$ is odd, so $(2n+1)\cdot j$ is odd. 
+			This number, added to $2n\cdot k$, which is even, will result in an odd number. Therefore, the 
+			total degree of $G$ is odd, which contradicts Theorem 2.10, so $G$ must have an even amount of verticies with odd degree.
+  		\end{proof}
+
+
+\end{description}
+\end{document}
