@@ -18,7 +18,7 @@
 
 \title{Reflection $2$}
 \author{Jeremy Benedek}
-\date{FJanuary 19, 2016}
+\date{Feburary 19, 2016}
 
 \begin{document}
 \maketitle
@@ -37,67 +37,77 @@
 		while solving proofs. 
 
 	\item[Part 2: Types of Argument] \hfil \\
-	
+	  The first type of argument is proof by contradiction. The type of argument was used in proving Theorem 2.28. This argument works well
+	  when dealing with a claim that assumes something is true, and as a result something else must also be true. Specifically, this works well when
+	  the assumption deals with a property of a Graph.
+	An outline of this proof would be: \\ 
+	\begin{proof} Assume towards contradiction the negation of some part (or all) of the claim. By unpacking definitions, find a contradiction.
+	  Since there is a contradiction, our assumption must be false. So we have the negation of assumption, which was the negation of the claim. 
+	Therefore, we end with the claim, by using double negation. \end{proof}
+
+	The second type of argument is proof by induction. This type of argument was used in proving Theorem 2.51. This argument works well when dealing
+	with claims that involve manipulating a previous number/graph/etc. with the results still following some property. Summations are a specific
+	example of this. An outline of this proof would be: \\
+	\begin{proof} Prove the claim holds true for the base case. Now assume the claim works for the previous iteration and show the claim works
+	  for the next iteration (so assume it works for $k$ and prove it works for $k + 1$). This assumption (the induction hypothesis) will
+	mostly likely be used for a substitution during the process of proving it works for the next iteration. \end{proof}
+
+	The third type of argument is proof by contrapositive. This type of argument was used in proving Theorem 2.31. This argument works well
+	with conditionals. This argument style is an alternative to proof by implication. An outline for this proof would be: \\
+	\begin{proof} If the claim is: If P, then Q, you would start by supposing the negation of Q. By using some proof techniques, you would need
+	  to show that the negation of P is true (so P is false). 
+	\end{proof}
+
 	\item[Part 3: Three Polished Proofs] \hfil \\
-		Theorem 2.10 is a proof who's result is mathematically important. This idea of total degree being even does came up a some furthur exercises. Additionally, Now that I know a Euler Circuit requires all verticies to be of even, positive degree, this has made me wonder what is so special with even numbers, because we are seeing 2 interesting problems (what is a graph, and what is a Euler circuit) hinge on even numbers.
+
+
+	 	 \begin{cor}[2.58]
+	    	If $G$ is a tree with $n$ vertices, then $G$ has $n - 1$ edges.
+		      \end{cor}
+		\begin{proof}
+			A tree is a connected, planar graph, by Theorem 2.46, so by Theorem 2.55, $|V| - |E| + |F| = 2$. Since $G$ has $n$ vertices, 
+			let $n$ = $V$, so
+			$n - |E| + 1 = 2$. Since $G$ is a tree and therefore is planar, it only has 1 face, the unbounded face. $n - 1 = |E|$. Therefore the number of edges is $n - 1$.
+		\end{proof}
 		
-		\begin{thm}2.10     The total degree of any graph is even.\end{thm}
- 		 \begin{proof}  A graph is a pair of sets, one set contains all vertices in the graph, and the other is a set of all edges in the graph.
-       				The degree of a vertex is the number of times a vertex is an endpoint for any edge in the graph. 
-				The total degree of a graph is the sum of the degree of all vertices in the graph. 
-				An edge contains 2 endpoints. 
-				2 times any number is even, so 2 times the number of edges is even 
-				The total degree of the graph is 2 times the number of edges, since each has 2 endpoints, and each endpoint is a vertex. 
-       				Therefore, the toal degree is even.  \end{proof}
-
-		Theorem 2.25 has a interesting and important argument, the idea of an equivalance relation and various proporties of relations.	
-		Personally, I have previous experience with relations, and I like doing work involving them, so this is part of the reason the argument
-		is interesting. 
-
-		\begin{thm}[2.25]
-		          Let $G$ be a graph with vertices $u$, $v$, and $w$.
-        	  \begin{enumerate}
-        	    \item The vertex $v$ is connected to itself.
-       		    \item If $u$ is connected to $v$ and $v$ is connected to $w$, then $u$ is connected to $w$.
-        	    \item If $v$ is connected to $w$, then $w$ is connected to $v$.
-         	 \end{enumerate}
- 		 \end{thm}
- 		  \begin{proof}
-        		$v$ is connected to itself if there is a walk from $v$ to $v$. By defintion 2.6, $W: v$ is a walk. So $v$ is connected to itself. \qed
-         		 \\
-         		Assume there is a walk between $u$ and $v$ and another walk between $v$ and $w$. 
-			So, $W: v_1, e_1, ... v_j, e_j, v_k, e_k, v_l, e_l$, where $v_j$     is vertex u, 
-			$v_k$ is vertex v, $v_l$ is vertex w. $W$ contains a walk between $u$ and $v$ and a 
-			walk between $v$ and $w$ and finally, a walk between $u    $ and $w$,  so $u$ is connected to $w$. \qed
-         		 \\
-         		Assume $v$ is connected to $w$, so there is a walk between $v$ and $w$. 
-			Since a walk is a finite set of adjacent vertices and edges, being adjacent does not depend on order, 
-			just that they are next to each other in some direction. For an endpoint, the order of the vertices do not matter.
-			So, if there is a walk between $v$ and $w$, then there is a walk between $w$ and $v$. Therefore, $w$ is connected to $v$, 
-			since $v$ is connected to $w$.
- 		\end{proof}
+		My proof for Corollary 2.58 has a interesting result since this theorem shows that there are many ways to prove a claim. We have proved this claim previously, and
+		the fact that this claim can be proven using different arguments if important for proof writing, as there are many ways to 
+		write a proof. 
 	
-		My proof for Corollary 2.11 has good style. This Corollary was proven using proof by contradiction, definitions were unpacked
-		(especially the definitions of even and odd), the arithmetic I do is clean and easy to follow. All three characteristics are 
-		characteristics of good style.
+		\begin{cor}[2.61]
+		  	The graph $K_5$ is not planar.
+		\end{cor}
+		\begin{proof}
+			Assume towards contradiction $K_5$ to be a planar graph. Since $K_5$ is a complete graph, it contains no loops and 
+			has unique edges for each pair of distinct vertices. So by Theorem 2.59, If $|V| \geq 3$, then $|E| \leq 3|V| - 6.$
+			$K_5$ has 5 vertices and 10 edges. $10 \nleq 3*5 - 6$ contradiction, so $K_5$ is not planar. 
+		\end{proof}
 	
-		\begin{thm}Corollary 2.11     Let $G$ be a graph, then the number of vertices in $G$ with odd degree is even. \end{thm}
- 		\begin{proof}    According to Theorem 2.10,  the total degree of $G$ is even 
- 			Assume towards contradiction that $G$ has an odd amount verticies with odd degree
-  			An even number can be represented as $2n$ where $n \in \mathbb{Z}$ an odd number can be represented as $2n + 1$ where 
-			$n \in \mathbb{Z}$
-			The total degree of $G$ is the sum of the degree of all vertices, both with even degree and odd degree.
-			A vertex with even degree has degree $2n$. A vertex with odd degree has degree $2n + 1$  
-  			So the total degree of $G$ is $2n\cdot k + (2n+1)\cdot j$ where $k$ is the amount of verticies with even degree and $j$
-			is the amount of vertices with odd degree.
-  			Using proporties of even and odd numbers, the addition of 2 even numbers is even, and the addition of an even number 
-			and an odd number is odd. Additionally, an even number times an even number is even, 
-			and an even number times an odd number is odd.
-			Since there is an odd number of vertices with odd degree $j$ is odd, so $(2n+1)\cdot j$ is odd. 
-			This number, added to $2n\cdot k$, which is even, will result in an odd number. Therefore, the 
-			total degree of $G$ is odd, which contradicts Theorem 2.10, so $G$ must have an even amount of verticies with odd degree.
-  		\end{proof}
+		Corollary 2.61 has an important argument, that $K_5$ is planar. $K_5$ is a graph that we have been looking at since the
+		start of the semester, and it important that we can now definitely proved that the 5-station problem is not possible. The ability
+		to determine if a graph is planar in also important. 
 
+		\begin{thm}[2.29]
+		  	Let $G$ be a graph. Let $C$ be a subgraph of $G$ that consists of the vertices and edges that belong to a circuit in $G$. Then $deg_C(v)$ is 
+			even for every vertex $v$ of $C$.
+	       \end{thm}
+	       \begin{proof}
+			 Let $C$ be a subgraph of $G$ that consists of the vertices and edges that belong to a circuit in $G$.
+			 Consider taking a walk through $C$. Since $C$ is a circuit, by definition a walk must end at the same vertex it began at, and
+			 edges can not be repeated. So, for every time you walk into a vertex, 
+		 	 you must walk away from the vertex on another edge, since you cannot repeat edges and must return at the starting vertex, so
+			 the walk cannot end at that vertex, unless it is the first vertex in the walk. 
+			 So for every passage through a vertex, there  must be a multiple of  
+			 2 edges with endpoints at that vertex (one edge could be used for entry, and the other for exiting the vertex, and 
+			 this process could be repeated $m$ times if the degree of the vertex is $2m$.
+			 Therefore, for $n$ amount of passages through a vertex, 
+			 there are $2n$ edges with endpoints at that vertex, so the degree of that vertex is $2n$, which is even since 2 times a 
+			 integer is even.
+		\end{proof}
+						       
+		My proof for Theorem 2.29 has 3 characteristics of good style in the exposition. First, I clearly define the notation and variables
+		used in the proof, such as $C$ and $G$. Second, I provide definitions of terms, such as circuit. Lastly, my proof is concise and
+		does not contains information that is not used. These are all examples of good style. 
 
 \end{description}
 \end{document}
