@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Homework $6$}
+\author{Jeremy Benedek}
+\date{Feburary 21, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{thm}[2.70]
+	There are only five regular solids.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{ex}[2.72]
+	How many automorphisms does $K_5$ have? How many automorphisms does $K_{3,3}$ have?
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{ex}[2.73]
+	For each of the 5 regular planar graphs, find all auto-morphisms of the graph.
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{ex}[2.74]
+	Devise a computer program that determines whether two graphs are isomorphic.
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{ex}[2.76.5]
+	Find the dual graph of each of the platonic solids.
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{thm}[2.78]
+	For any natural number, $n$, let $G = (V,E)$ be a graph with $|V| \leq n$ that has no loops. Then $G$ is n-colorable. 
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[2.79]
+	Let $G = (V,E)$ be a graph with no loops. Let $M = max\{deg(v)|v\in V\}$, which is the biggest degree of a vertex. Then $G$ is $(M+1)$-colorable.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[2.80]
+	Consider a graph, $G$, that is built from a subgraph, $H$, by adding one new vertex, $v$, and new edges that connect the new vertex to vertices in $H$. If the subgraph $H$ has a 5-coloring such that the new vertex, $v$, is 
+	not adjacent to vertices of all five colors, then $G$ is 5-colorable.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[2.82]
+	Any planar graph with no loops is 6-colorable.
+\end{thm}
+\begin{proof}
+	Following Theorem 2.63, any planar graph with no loops has a vertex of degree at most 5. Using Theorem 2.79,  graph $G$ is $m+1$ colorable, with $m$ being the biggest degree of a vertex.
+	Since 5 is the largest degree of a vertex in a planar graph, it is 5+1, or 6-colorable.
+\end{proof}
+
+\end{document}
