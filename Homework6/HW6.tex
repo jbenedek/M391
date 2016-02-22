@@ -25,49 +25,81 @@
 	There are only five regular solids.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	There are only 5 regular planar graphs. Each graphs has all of its vertices with the same degree. Additionally, each face is bounded by the same number of edges. A regular solid is a solid object with 
+	flat polygonal faces such that every face has the same number of edges and every vertex has the same degree. So, regular solids are made up of regular graphs. Since there are only 
+	5 regular graphs, there must also be 5 regular solids. 
 \end{proof}
 
 \begin{ex}[2.72]
 	How many automorphisms does $K_5$ have? How many automorphisms does $K_{3,3}$ have?
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	$K_5$ has 120 automorphisms ($5!$). $K_{3,3}$ has 18 automorphisms ($6*2*1*3*2*1$). 
 \end{solution}
 
 \begin{ex}[2.73]
 	For each of the 5 regular planar graphs, find all auto-morphisms of the graph.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	\begin{enumerate}
+  	
+	  \item Graph $G_1 = (V_1, E_1)$ $V_1 = \{a,b,c,d\}$ $E_1 = \{ \{a,b\}, \{b,d\}, \{d,c\}, \{c,a\}, \{c,b\}, \{a,d\} \}$ has 6 auto-morphisms.
+	  \item Graph $G_2 = (V_2, E_2)$ $V_2 = \{a,b,c,d,e,f,g,h\}$ \\ $E_2 = \{ \{a,b\}, \{b,d\}, \{d,c\}, \{c,a\}, \{a,e\}, \{e,f\}, \{f,b\}, \{f,h\}, \{h,d\}, \{h,g\}, \{g,c\}, \{g,e\} \}$ has 16 auto-morphisms.
+	  \item The regular planar graph Octahedron has 9 auto-morphisms.
+	  \item The regular planar graph Dodecahedron has 25 auto-morphisms. 
+	  \item The regular planar graph Icosahedron has 28 auto-morphisms.
+
+
+	\end{enumerate}
+
 \end{solution}
 
 \begin{ex}[2.74]
 	Devise a computer program that determines whether two graphs are isomorphic.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	Compare the number of edges in the first graph with the number of edges in the second graph. If they are not equal, the graphs are not isomorphic. If they are equal, compare the number of vertices in the first
+	graph with the number of vertices in the second graph. If they are not equal, the graphs are not isomorphic. If they are equal, take the degree of every vertex of the first graph and put them into an array. Sort this
+	array in ascending order. Then, take the degree of every vertex of the second graph and put them into an array, and sort this array in ascending order. If these two arrays are not equivalent, the graph is not
+	isomorphic, if they are equivalent, then we will examine the edges in the graph. For each edge in graph one, you must find an edge in graph two where the degree of the endpoints of the edge in the first graph is 
+	equivalent to the degree of the endpoints in the other graph. If you cannot do this for every edge without repeating edges, then the graphs are not isomorphic. If you have not previously determined these graphs to be 
+	not isomorphic, then the graphs are isomorphic. 
 \end{solution}
 
 \begin{ex}[2.76.5]
 	Find the dual graph of each of the platonic solids.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	\begin{enumerate}
+
+	  \item The dual graph of the cube is a graph of a octahedron.
+	  \item The dual graph of the tetrahedron is a graph of a tetrahedron.
+	  \item The dual graph of the octahedron is a graph of a cube.
+	  \item The dual graph of the dodecahedron is the graph of a icosahedron.
+	  \item The dual graph of the icosahedron is the graph of a dodecahedron. 
+
+	\end{enumerate}
+
 \end{solution}
 
 \begin{thm}[2.78]
 	For any natural number, $n$, let $G = (V,E)$ be a graph with $|V| \leq n$ that has no loops. Then $G$ is n-colorable. 
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Take graph $G$ and assign each vertex a distinct color. Since $G$ has no loops, no 2 adjacent vertices have the same color, since each vertex has a different color, and no vertex is adjacent to itself. 
+	$G$ is now n-colorable, if $n$ is the number of colors used and $|V| \leq n$. 
 \end{proof}
 
 \begin{thm}[2.79]
 	Let $G = (V,E)$ be a graph with no loops. Let $M = max\{deg(v)|v\in V\}$, which is the biggest degree of a vertex. Then $G$ is $(M+1)$-colorable.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Induct on the number of vertices, $n$, in the Graph, $G$.\\
+	Base: $n=1$, so a 1 vertex graph. Since it has no loops, it has no edges, so the max degree is 0. This graph is 1-colorable. \\
+	Now assume that for a graph with maximum degree of $m$, is $m+1$ colorable. Let $G_1$ be a graph with $n + 1$ vertices, with the maximum degree of the graph be $m$. 
+	Remove a vertex, and all edges with this vertex as an endpoint, from graph $G_1$. This new graph, $G_2$, is now a graph with $n$ vertices and let $m$ be the maximum degree of $G_2$. So, by the induction 
+	hypothesis, $G_2$ is $m+1$-colorable. Add back in the vertex and edges removed from $G_1$ to $G_2$. Color this new vertex with a color that is not used in an adjacent vertex, there must be at least 1 color, since the 
+	maximum degree in the graph is $m$, and you have $m+1$ colors to chose from. So this graph is $m+1$ colorable. 
 \end{proof}
 
 \begin{thm}[2.80]
@@ -75,7 +107,8 @@
 	not adjacent to vertices of all five colors, then $G$ is 5-colorable.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Consider vertex $v$, which is the vertex added to graph $H$ (along with edges) that creates $G$. If $H$ is 5-colorable, and $v$ is not adjacent to all five colors, then if you assign $v$ to be a color
+	that is not the color of an adjacent vertex, you will maintain the colorability of the graph. So, $G$ is still 5-colorable.
 \end{proof}
 
 \begin{thm}[2.82]
