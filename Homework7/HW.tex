@@ -25,14 +25,15 @@
 	Show that there are exactly six transformations of the equilateral triangle. List it's inverse. 
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	The transformation are $R_0$, with inverse of $R_0$; $R_{120}$, with inverse of $R_{240}$; $R_{240}$, with inverse of $R_{120}$; $F_T$, with inverse of $F_T$; $F_L$, with inverse of $F_L$; and $F_R$, with inverse of $F_R$. 
+	These are the only six because there are three vertices in a triangle, and only two distinct ways of manipulating the triangle (flip and rotation). So 3 times 2 is 6. 
 \end{solution}
 
 \begin{ex}[3.4]
 	Find some examples of two transformations of an equilateral triangle where composing the transformations in one order gives a different result from doing them in the other order.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+  $R_{120} \circ F_L \neq F_L \circ R_{120}$
 \end{solution}
 
 \begin{ex}[3.5]
@@ -46,56 +47,67 @@
 	\end{enumerate}
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	\begin{enumerate}
+	  \item This is closed and well defined. Since the result of the minimum operation cannot be out of the interval, and there is no ambiguity representing numbers within that interval.
+	  \item Not closed, Let $a=6$, $b=0$. $\frac{6}{0} \notin \mathbb{R}$
+	  \item This is closed and well defined. Since the result of the operation will be an integer, and there is no ambiguity in representing an integer. 
+	  \item This is closed since the resulting fraction of the operation will be in $\mathbb{Q}$ since it is a fraction. This is not well defined since there is ambiguity in representing fractions. Let $a=\frac{1}{4} = \frac{7}{28}$
+	    and $b=\frac{28}{7}$. So the result of the operation could be $\frac{1}{7} or \frac{7}{7}$ depending on what representation is chosen. 
+	  \item Not closed, Since if $b>a$, then $a-b < 0$, which is not in $\mathbb{N}$
+
+	\end{enumerate}
 \end{solution}
 
 \begin{thm}[3.6]
 	Let $G$ be a group. There is a unique identity element in $G$. In other words, there is only one element in $G$, $e$, such that $g*e = g = e*g$ for all $g$ in $G$.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Let $e_1, e_2$ be identity elements in $G$ such that $g*e_1 = g = e_1 * g$ and $g*e_2 = g = e_2 *g$\\So $g*e_1 = e_2 *g$. So $e_1 = e_2$. There are equal, so there is only 1 unique identity.
 \end{proof}
 
 \begin{thm}[3.7]
 	Let $G$ be a group and let $a,x,y \in G$. Then $a*x = a*y$ if and only if $x=y$. Similarly, $x*a = y*a$ if and only if $x=y$.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Let $a*x = a*y$ \\ $a{-1}*a*x = a{-1}* a*y$ \\ $e*x = e*y$ for some identity element $e$.  So $x=y$.
+	\\ Let  $a*y = a*x$ \\ $a{-1}*a*y = a{-1}* a*x$ \\ $e*y = e*x$ for some identity element $e$. So $x=y$.\\
+	Let $x=y$. There exists an operation such that $x*a = y*a$. Likewise, Let $x=y$, there exist an operation such that $a*x = a*y$. 
 \end{proof}
 
 \begin{ex}[3.8]
 	Show that the Cancellation law fails for $(\mathbb{R}, \cdot)$, thus confirming it is not a group.
 \end{ex}
 \begin{solution}
-    Write your solutions here.
+	Let $a=0, x=3, y=5$. So $0\cdot3 = 0\cdot5$. $0=0$, but $5\neq3$
 \end{solution}
 
 \begin{cor}[3.9]
 	Let $G$ be a group. Then each element $g$ in $G$ has a unique inverse in $G$. In other words, for a fixed $g$, there is only one element, $h$, such tat $g*h = e = h*g$. 
 \end{cor}
 \begin{proof}
-    Write your proof here.
+	Let $g*h_1 = e = h_1 * g$ and  $g*h_2 = e = h_2 * g$ \\  $g*h_1 = g*h_2$, by Theorem 3.7, $h_1 = h_2$.
 \end{proof}
 
 \begin{thm}[3.10]
 	Let G be a group with elements $g$ and $h$. If $g*h = e$, then $h*g=e$.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	By definition, there is an identity element and inverse for all elements in $G$. \\ $g * h & h^{-1} = e * h^{-1}$ \\ $g * e = e & h^{-1}$ \\ $g = h^{-1}$. $h*g = h * h^{-1}$. So, $h*g=e$
 \end{proof}
 
 \begin{thm}[3.11]
 	Let $G$ be a group and $g\in G$. Then $(g^{-1})^{-1} = g$. 
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	Let $h = g^{-1}$. So $h^{-1} = e*h^{-1} = g * h * h^{-1}$ based on the definition of an identity element $e$. By the associative property, $= g * h * h^{-1} = g * e = g$. 	
 \end{proof}
 
 \begin{thm}[3.13]
 	For every natural number n, the set $C_n$ with n-cyclic addition, ($C_n$, $\oplus_n$) is a group.
 \end{thm}
 \begin{proof}
-    Write your proof here.
+	The operation $\oplus_n$ is closed and well-defined since the function is defined in such a way that the result of the operation is less than $n$. That operation is also associative since it is addition, which is associative on the 
+	natural numbers. There is an identity element for all elements, 12, and an inverse for all elements, 1. So by definition, this is a group.
 \end{proof}
 
 
