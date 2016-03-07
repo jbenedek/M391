@@ -1,0 +1,104 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsfonts}
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Homework $7$}
+\author{Jeremy Benedek}
+\date{March 6, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{ex}[3.1]
+	Show that there are exactly six transformations of the equilateral triangle. List it's inverse. 
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{ex}[3.4]
+	Find some examples of two transformations of an equilateral triangle where composing the transformations in one order gives a different result from doing them in the other order.
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{ex}[3.5]
+	Show that the following operations (*) are or are not closed, well-defined binary operations on the given sets. 
+	\begin{enumerate}
+	  \item The interval $[0,1]$ with $a*b = min\{a,b\}$
+	  \item $\mathbb{R}$ with $a*b = a/b$
+	  \item $\mathbb{Z}$ with $a*b = a^2 + b^2$
+	  \item $\mathbb{Q}$ with $a*b = \frac{Numerator of b} {Decominator of b}$
+	  \item $\mathbb{N}$ with $a*b = a-b$
+	\end{enumerate}
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{thm}[3.6]
+	Let $G$ be a group. There is a unique identity element in $G$. In other words, there is only one element in $G$, $e$, such that $g*e = g = e*g$ for all $g$ in $G$.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[3.7]
+	Let $G$ be a group and let $a,x,y \in G$. Then $a*x = a*y$ if and only if $x=y$. Similarly, $x*a = y*a$ if and only if $x=y$.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{ex}[3.8]
+	Show that the Cancellation law fails for $(\mathbb{R}, \cdot)$, thus confirming it is not a group.
+\end{ex}
+\begin{solution}
+    Write your solutions here.
+\end{solution}
+
+\begin{cor}[3.9]
+	Let $G$ be a group. Then each element $g$ in $G$ has a unique inverse in $G$. In other words, for a fixed $g$, there is only one element, $h$, such tat $g*h = e = h*g$. 
+\end{cor}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[3.10]
+	Let G be a group with elements $g$ and $h$. If $g*h = e$, then $h*g=e$.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[3.11]
+	Let $G$ be a group and $g\in G$. Then $(g^{-1})^{-1} = g$. 
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[3.13]
+	For every natural number n, the set $C_n$ with n-cyclic addition, ($C_n$, $\oplus_n$) is a group.
+\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+
+
+\end{document}
+
