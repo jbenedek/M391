@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amssymb}
+
+
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Reflection $3$}
+\author{Jeremy Benedek}
+\date{March 11, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+	\item[Part 1: Exam Preparation] \hfill \\
+	 	To prepare for the next proof based exam, I am going to 
+		carefully review previous proofs that were completed for homework
+		and focus on the feedback of the grader. This past exam had a few proofs we have seen before, so buy learning what I did wrong,
+		I could do well on those proofs if I were to see them again. Also, this will help me review some common tricks or themes
+		that occurred in proofs we did, as well as to discover some common mistakes I have made.
+		The second thing I would do to study would be to create proof outlines, this is a great way to 
+		prepare for an exam since you are thinking about specific proof structures that you are likely to see on the exam. Finally, another
+		method to prepare for an exam is to take a claim we have already proven, and prove it using a different method. This allows you
+		to try out different methods and gain some tricks and new perspectives that may help you when solving a different and difficult proof. 
+
+	\item[Part 2: Groups vs Graphs] \hfil \\
+		Graphs and groups are similar in that they both involve sets, a graph is a pair of sets, and a group is a special set with an operator,
+		that is how these two things are the same, so the proofs for them, since they are sets, will follow the proof of a set; we can
+		you use the same proof techniques, contrapositive, contradiction, etc. 
+		Both structures (groups and graphs), are made up of many elements, such as individual edges and vertices in a graph, or individual
+		elements or numbers in a group. So a proof for them requires you to prove the claim for every element, so you must prove it 
+		generically. 
+		They differ in that Group theory has a much more prevalent base in algebra and algebraic manipulation. 
+		Additionally, for me, graph theory proofs seem more abstract as you are trying to prove something about a graph, without depending on 
+		the pictorial representation, where as group theory proofs seem more concrete and straight to the point (so far, at least), since
+		you are proving something about a group using algebra. 
+
+	\item[Part 3: Three Polished Proofs] \hfil \\
+		\begin{thm}[2.82]
+	  	Any planar graph with no loops is 6-colorable.
+	      \end{thm}
+	      \begin{proof}
+			Following Theorem 2.63, any planar graph with no loops has a vertex of degree at most 5. Using Theorem 2.79,  graph $G$ is $m+1$ colorable, with $m$ being the biggest degree of a vertex.
+			Since 5 is the largest degree of a vertex in a planar graph, it is 5+1, or 6-colorable.
+	      \end{proof}
+			This proof has a result that is important, since the result of the proof is so overarching. The result of this proof
+			relates to all planar graphs, so since we proved this, we now know something about whole grouping of graphs.
+
+			\hfil \\
+
+		\begin{thm}[2.80]
+		  	Consider a graph, $G$, that is built from a subgraph, $H$, by adding one new vertex, $v$, and new edges that connect the new vertex to vertices in $H$.
+			If the subgraph $H$ has a 5-coloring such that the new vertex, $v$, is 
+			not adjacent to vertices of all five colors, then $G$ is 5-colorable.
+		\end{thm}
+		\begin{proof}
+			Consider vertex $v$, which is the vertex added to graph $H$ (along with edges) that creates $G$. If $H$ is 5-colorable, and $v$ is not adjacent to all five colors, then if you assign $v$ to be a color
+			that is not the color of an adjacent vertex, you will maintain the colorability of the graph. So, $G$ is still 5-colorable.
+		 \end{proof}
+			This proof has a interesting argument, since you start by knowing something about one graph, and the claim also claims
+			that you can build up that graph by adding a vertex, and get a similar result. More specifically, this argument
+			is interesting since by changing the graph you start with, you are not changing the result (if you follow the restrictions
+			that were put on in the claim of this proof). 
+
+
+		\begin{thm}[2.78]
+		  	For any natural number, $n$, let $G = (V,E)$ be a graph with $|V| \leq n$ that has no loops. Then $G$ is n-colorable. 
+	      \end{thm}
+	      \begin{proof}
+			Take graph $G$ and assign each vertex a distinct color. Since $G$ has no loops, no 2 adjacent vertices have the same color.
+			So each vertex has a different color, and no vertex is adjacent to itself. 
+			$G$ is now n-colorable, if $n$ is the number of colors used and $|V| \leq n$. 
+	      \end{proof}
+			This exposition has three characteristics of good style, it is short and concise, it explains the notation and variables used,
+			and it restates the claim, including the restrictions that the claims placed upon it.
+
+\end{description}
+\end{document}
