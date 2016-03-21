@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsfonts}
+
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Homework $8$}
+\author{Jeremy Benedek}
+\date{March 20, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{ex}[3.14]
+	Show that $\oplus$ is well-defined on $\mathbb{Z}_n$.
+\end{ex}
+\begin{solution}
+	$2\oplus3=5$ and $12\oplus 15 = 29 = 5 + 2(12) = 5$
+	So the representation of the number did not change the 
+	result, so this is well-defined.
+\end{solution}
+
+\begin{ex}[A.1]
+	Simply each of the following expressions modulo the specified
+	number. \begin{itemize}
+	  \item $(a+b)^3 \bmod 3$
+	  \item $103-28+5(6) \bmod 2$
+	  \item $3(4) \bmod 6$
+	  \item $1586749 \bmod 10$
+	\end{itemize}
+\end{ex}
+\begin{solution}
+	\begin{itemize}
+	  \item $a+b)^3 \bmod 3$ \\ $n(a+b)^3 = 3$
+	  \item $103-28+30 = 75+30 = 105$ \\ $105 \bmod 2 = 1$
+	  \item $12 \bmod 6 = 0$
+	  \item $1586749 \bmod 10 = 9$
+	\end{itemize}
+\end{solution}
+
+\begin{ex}[3.16]
+	Looking at the Cayley tables for $C_5$ and $\mathbb{Z}_5$, do you
+	notice any features of the rows and columns that could be
+	generalized to all Cayley tables? Make a conjecture end prove
+	it.
+\end{ex}
+\begin{solution}
+	I  notice that lines of diagonal have the same number. This makes
+	sense since the rows and columns of a Cayley table are in
+	sequential order. With the operation of addition, when you
+	move up one column, you also move right one row (making the 
+	diagonal), so you start with $a+b$ and move a up ($a-1$) and
+	move b right ($b+1$). So $a+b = (a-1) + (b+1)$. These
+	numbers are equivalent, so the numbers along a diagonal are equivalent.
+	\qed
+\end{solution}
+
+\begin{ex}[3.18]
+	Consider a square in the plane. How many distinct symmetries does
+	it have? Give each symmetry a concise, meaningful label. For each
+	pair of symmetries, S and T, compose them in both orders. Record
+	this in a Cayley table. 
+\end{ex}
+\begin{solution}
+	There are 8 symmetries: $R_0, R_{90}, R_{180}, R_{270}, D_1, D_2,
+	M_1, M_2$, where $R_n$ is a rotation of n degrees. $D_1$ and $D_2$
+	are both flips along a diagonal line, and $M_1$ and $M_2$ are flips
+	are the midpoints (horizontal and vertical) of the sides.
+
+	Composing these symmetries in different orders will result 
+	in different transformation. $R_{90} \circ D_2 \neq D_2 \circ R_{90}$
+
+\end{solution}
+
+\begin{thm}[3.19]
+	The symmetries of the square in the plane with composition
+	form a group.
+\end{thm}
+\begin{proof}
+	This is a group because it is Associative, since function
+	composition is, the identity element is $R_0$, there exists
+	an inverse for all transformation, and the operation is closed
+	and well-defined. 
+\end{proof}
+
+\begin{ex}[3.20]
+	For each natural number $n$, how many elements does $D_n$ have? 
+	Justify.
+\end{ex}
+\begin{solution}
+	$D_n = 2n$, this comes from there being two ways to organize the
+	vertices, clockwise and counter-clockwise. For each group, there
+	are n organizations. So it follows that the total is $2n$. 
+\end{solution}
+
+\begin{ex}[3.22]
+	For each of the following groups, find all subgroups. Argue that
+	your list is complete.
+
+	\begin{enumerate}
+	  \item $(D_4, \circ)$
+	  \item $(\mathbb{Z}, +)$
+	  \item $(C_n, \oplus_n)$
+	\end{enumerate}
+\end{ex}
+\begin{solution}
+	\begin{enumerate}
+	  \item The subset including an element, its inverse, and the identity
+	    will be a sub group. $R_0$ is also a subgroup on its own.
+	    All rotations are also a subgroup on its own. The super group
+	    is also a subgroup. Each flip individually with $R_0$ will
+	    be subgroups. A complete list will come from fully analyzing 
+	    the Cayley table and finding groups of elements that work.
+	  \item There are many subgroups, $(n\mathbb{Z}, +)$ are many subgroups. 
+	    This list is complete since multiples of intergers will result
+	    in a subgroup of this supergroup.
+	  \item There are many subgroups formed by changing the $n$. 
+	    This is a complete list since this cyclic group
+	    can including many groups with a different n focus. 
+	\end{enumerate}
+
+
+\end{solution}`
+
+\end{document}
