@@ -1,0 +1,122 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsfonts}
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Homework $9$}
+\author{Jeremy Benedek}
+\date{March 27, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{thm}[3.24]
+	Let $G$ be a group with identity element $e$. Then $\{e\}$ is a subgroup of $G$. 
+\end{thm}
+\begin{proof}
+	$\{e\}$ is a group since it has an identity element, $e$, and all members have an inverse, in this case with only one element, $\{e\}$ has
+	an inverse of $\{e\}$. The associativity and closed requirements of a group are inherited from the $G$, so it follows that $\{e\}$ also
+	have these characteristics. This will be well defined since it is the identity element by itself, so regardless of the operation, $e*e$ will
+	have a result always in $\{e\}$. Therefore, this is a group, and since all members are in $G$, this is a subgroup of $G$.
+\end{proof}
+
+\begin{thm}[3.25]
+	Let $G$ be a group. Then $G$ is a subgroup of $G$. 
+\end{thm}
+\begin{proof}
+	Since $G$ is a group, $G$ is closed, well-defined, associative, has an identity element, and all members have an inverse. So it follows
+	that $G$ is a group. Since $G$ is the same group as $G$, all members of $G$ exist in $G$, so $G$ is a subgroup of $G$.
+\end{proof}
+
+\begin{ex}[3.26]
+	Let $G$ be a group, $g\in G$, and $n,m\in\mathbb{Z}$. Then \begin{enumerate}
+	  \item $g^ng^m = g^{n+m}$
+	  \item $(g^n)^{-1}$
+	\end{enumerate}
+
+\end{ex}
+\begin{solution}
+	\begin{enumerate}
+	  \item $g^n$ is $g$ stared to itself $n$ times. Like wise $g^m$ is $g$ stared to itself $m$ times, where star is the operation. So if you
+	    combine the two, you get $g$ stared to itself $n$ times and then $m$ times, so $n+m$ times. $g$ stared to itself $n+m$ times is
+	    the same as $g^{n+m}$. 
+	  \item By definition, $g^{-n}$ is the binary operation applied to the inverse of $g$ $n$ times. So, $g^{-1}$ starred $n$ times. $g^n$ is $g$ 
+	    starred to itself $n$ times. The inverse of this would be the inverse of the individual elements starred together $n$ times, following
+	    the socks and shoes lemma. So the inverse of $g^n$ would be the inverse of $g$ starred together $n$ times. Which is the same as $g^{-n}$.
+	    So these two have the same result. 
+	\end{enumerate}
+\end{solution}
+
+\begin{thm}[3.27]
+	Let $G$ be a group and $g$ be an element of $G$. Then $\langle g \rangle$ is a subgroup of $G$. 
+\end{thm}
+\begin{proof}
+	All members of $\langle g \rangle$ are members of $G$ since $\langle g \rangle$ is formed by using the members of $G$. $\langle g \rangle$
+	is also a group since it is associative and well-defined since that is inherited from the bigger group. The identity element 
+	is present in this subgroup since $e = g^n * g^{-n}$, since $\langle g \rangle$. There is an inverse for all elements since the elements
+	are $g^{\pm n}$. 
+\end{proof}
+
+\begin{thm}[3.29]
+	Let $G$ be a group and $S$ be a subset of $G$. Then $\langle S \rangle$ is a subgroup of $G$. Moreover, if $H$ is a subgroup of $G$ and 
+	$S\subset H$, then the subgroup $\langle S \rangle$ is a subgroup of $H$.
+\end{thm}
+\begin{proof}
+	If $S$ is a single element, then $S$ is a group from Tm. 3.27. If $S$ contains multiple elements, than it is still a group because
+	it has the identity, $e = a^n * a^{-n}$. All elements have an inverse since the elements are $a^{\pm n}$. It is also closed since all elements
+	when operated upon still return an member of the group. Therefore, this is a group. This is also a subgroup since $S\subset H \subset G$. 
+\end{proof}
+
+\begin{ex}[3.30]
+	Which subgroup is $\langle \{6, -8\}\rangle$? Which subgroup is $\langle \{5,-8\} \rangle$?
+\end{ex}
+\begin{solution}
+	 $\langle \{6, -8\}\rangle$ is the subgroup $(2\mathbb{Z}, +)$. All elements are even number, since the addition and subtraction of
+	 even numbers result in an even number, so it is not possible to get an odd number if you start with only even numbers.
+	  $\langle \{5,-8\} \rangle$ is the subgroup $(\mathbb{Z}, +)$. $5+ - 8 = 3, 5-3=2, 3-2=1$. Since you now have one, you can get every integer
+	  by either adding or subtracting one to the previous integer (the integer with the less absolute value). 
+\end{solution}
+
+\begin{thm}[3.33]
+	Any subgroup of a cyclic group is cyclic. 
+\end{thm}
+\begin{proof}
+	The subgroup of a cyclic group, since it is a group, contains the identity elements and the inverse for all members. Since the supergroup
+	is cyclic, and the subgroup contains these specific elements, the cyclic property will be found in the subgroup. 
+\end{proof}
+
+\begin{thm}[3.34]
+	The groups $D_n$ for $n\le 2$ are not cyclic. 
+\end{thm}
+\begin{proof}
+	The groups for $n \le 2$ are not cyclic since there does not exist an element in $D_n$ that can generate itself, for $n\le2$. 
+\end{proof}
+
+\begin{thm}[3.36]
+	Every finite group $G$ is finitely generated. 
+\end{thm}
+\begin{proof}
+	If $G$ was not finitely generated, than $G$ would somehow not be able to contain all members of the set that generated it, which is 
+	not possible. Therefore, $G$ was finitely generated. 
+\end{proof}
+
+\begin{thm}[3.37]
+	The group $\{\mathbb{Q} \setminus \{0\}, \cdot\}$ is not finitely generated. 
+\end{thm}
+\begin{proof}
+	This group is infinite, since the multiplication of fractions is infinite because it is not well-defined. Fractions can be represented in 
+	many ways. Therefore, it is not finitely generated. 
+\end{proof}
+
+\end{document}
