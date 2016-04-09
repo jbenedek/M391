@@ -51,20 +51,28 @@
 		My proof for Thm. 3.24 has a result that is important because this proof shows us that the smallest group possible is the group
 		containing just the identity element. 
 	  \begin{thm}[3.24]
-	      
+	      	Let $G$ be a group with identity element $e$. Then $\{e\}$ is a subgroup of $G$. 
+
 		\end{thm}
 	      \begin{proof}
-	      
+	      $\{e\}$ is a group since it has an identity element, $e$, and all members have an inverse, in this case with only one element, $\{e\}$ has
+	an inverse of $\{e\}$. The associativity and well-defined requirements of a group are inherited from the $G$, so it follows that $\{e\}$ also
+	have these characteristics. This will be closed since it is the identity element by itself, so regardless of the operation, $e*e$ will
+	have a result always in $\{e\}$. Therefore, this is a group, and since all members are in $G$, this is a subgroup of $G$.
+
 	      \end{proof}
 
 	      My proof for Thm. 3.25 has an argument that is important an interesting because the argument that a group is a subgroup of itself 
 	      has further implications and affect my interpretation and understanding of a subgroup. 
 	      This argument is interesting because it implies that every group will have at least one subgroup, itself. 
 		\begin{thm}[3.25]
-		
+			Let $G$ be a group. Then $G$ is a subgroup of $G$. 
+
 		\end{thm}
 		\begin{proof}
-		 
+		 Since $G$ is a group, $G$ is closed, well-defined, associative, has an identity element, and all members have an inverse. So it follows
+	that $G$ is a group. Since $G$ is the same group as $G$, all members of $G$ exist in $G$, so $G$ is a subgroup of $G$.
+
 		\end{proof}
 
 
@@ -72,11 +80,18 @@
 		Second, I use relevant definitions by showing it is a group and thus follows all 5 parts of the definition of a group.
 		Lastly, my notation is clear and I do not introduce an extraneous variables. 
 		\begin{thm}[3.27]
-		  
+		  	Let $G$ be a group and $g$ be an element of $G$. Then $\langle g \rangle$ is a subgroup of $G$. 
+
 	      
 		\end{thm}
 	      \begin{proof}
-	      
+	      All members of $\langle g \rangle$ are members of $G$ since $\langle g \rangle$ is formed by using the members of $G$. $\langle g \rangle$
+	is also a group since it fits the definition of a group by having all 5 requirements; it is associative and well-defined since 
+	that is inherited from the bigger group. The identity element 
+	is present in this subgroup since $e = g^0$, since $\langle g \rangle$. 
+	There is an inverse for all elements since the elements
+	are $g^{\pm n}$. Lastly, this is closed as operations between members of the group will have the result also be in the group. So this is a 
+	group. 
 	      \end{proof}
 
 \end{description}
