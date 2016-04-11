@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsfonts}
+
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Homework $11$}
+\author{Jeremy Benedek}
+\date{April 10, 2016e}
+
+\begin{document}
+\maketitle
+
+\begin{ex}[3.69]
+	Confirm the function is a homomorphism
+	\\ 1. $\phi : \mathbb{Z}_{12} \rightarrow \mathbb{Z}_{24}$ defined by $\phi([a]_{12}) = [2a]_{24}$
+	\\ 3. $\phi : \mathbb{Z}_{6} \rightarrow \mathbb{Z}_{3}$ defined by $\phi([a]_{6}) = [a]_{3}$
+ 
+\end{ex}
+\begin{solution}
+	1. $\phi(g_1 *_G g_2) = \phi( [g_1 + g)2]_{12} ) = [2(g_1 + g_2)]_{24} = [2g_1 + 2g_2]_{24}$ and
+	$\phi(g_1) *_H \phi(g_2) = [2g_1]_{24} + [2g_2]_{24} = [2g_1 + 2g_2]_{24}$
+	Additionally, this is well defined: $[a]_{12} = [b]_{12} [2a]_{24} = [2b]_{24} [2(b+k(12))]_{24} = [2b]_{24} 
+	[2b + 24k]_{24} = [2b]_{24}$ So this is a homomorphism.
+	\\ 3.
+	$\phi(g_1 *_G g_2) = \phi( [g_1 + g_2]_6 = [g_1 + g_2]_3$
+	$\phi(g_1) *_H \phi(g_2) = [g_1]_3 + [g_2]_3 = [g_1 + g_2]_3$
+	This is also well-defined, so is a homomorphism. 
+
+\end{solution}
+
+\begin{ex}[3.69 Extra]
+	Find the image of the homomorphism and the preimage of the identity. 
+\end{ex}
+\begin{solution}
+	1. $Im_{\phi} = \{ [0]_{24}, [2]_{24}, ... [22]_{24} \}
+	Preim_{\phi}([0]_{24} ) = \{ [0]_{12} \}$
+	\\ 3. $Im_{\phi}(\mathbb{Z}_6) = \{ [0]_3, [1]_3, [2]_3 \}
+	Preim_{\phi}( [0]_3 ) = \{ [0]_6, [3]_6 \}$
+
+\end{solution}
+
+\begin{thm}[3.70]
+	Let $H$ be a subgroup of group $G$. Then the inclusion of $H$ into $G$, $i_{H\subset G}:H \rightarrow G$, is a homomorphism
+\end{thm}
+\begin{proof}
+	Let $i_{H\subset G}(h_1 *_H h_2) = h_3$ and $i_{H\subset G}(h_1) *_G i_{H\subset G}(h_2) = h_1 *_G h_2 = h_3$. Since $h_L \in H$, $H$ will
+	be closed. Therefore, this is a homomorphism. 
+\end{proof}
+
+\begin{thm}[3.71]
+	If $\phi : G \rightarrow H$ is a homomorphism, the $\phi(e_G) = e_H$. 
+\end{thm}
+\begin{proof}
+	Chose $g$ in $G$.  $\phi(g) = \phi(g *_G e_G) = \phi(g) *_H \phi(e_G). 
+	\phi(g) * e_H = \phi(g) *_H \phi(e_G)$. By the cancellation law, $e_H = \phi(e_G)$, so $\phi(e_G) = e_H$
+\end{proof}
+
+\begin{thm}[3.72]
+	If $\phi: G \rightarrow H$ is a homomorphism and $g \in G$, then $\phi(g^{-1}) = [\phi(g)]^{-1}$.
+\end{thm}
+\begin{proof}
+	$\phi(g *_G g^{-1}) = \phi(g) *_H \phi(g^{-1} = e_H *_H \phi(g^{-1}$. So, $\phi(g) = e_H$. 
+\end{proof}
+
+\begin{thm}[3.73]
+	Let $G$ and $H$ be groups, let $K$ be a subgroup of the group $G$, and let $\phi : G \rightarrow H$ be a homomorphism, the
+	$\phi(K)$ is a subgroup of $H$. 
+\end{thm}
+\begin{proof}
+	Since this is a homomorphism, it is closed. Since this was a group, the well-defined as associative properties are also found. By
+	Theorem 3.72, the inverse element is also present. Additionally, by Theorem 3.71, the identity element is also found, so this is a group.
+	Since all members of $\phi(K)$ will be found in $H$ since the definition of $\phi$, this is a subgroup of $H$.
+\end{proof}
+
+\begin{cor}[3.74]
+	If $\phi$ is a homomorphism from the group $G$ to the group $H$, then $Im(\phi)$ is a subgroup of $H$. 
+\end{cor}
+\begin{proof}
+	By Thm. 3.73, this is a subgroup. Additionally, by Thm. 3.25, a group is a subgroup to itself. Since by the definition of $\phi$, $Im(\phi)$ is 
+	the same group as $H$, so it is a subgroup.
+\end{proof}
+
+\begin{thm}[3.77]
+	Let $G$ and $H$ be groups, let $L$ be a subgroup of group $H$ and let $\phi: G \rightarrow H$ be a homomorphism, the $\phi^{-1}(L)$, is
+	a subgroup of $G$.
+\end{thm}
+\begin{proof}
+	$\phi^{-1}(L)$ is closed because $\phi$ is a homomorphism. The identity element is present because of Theorem 3.71, and has the inverse
+	property because of Theorem 3.72. The associativity and well-defined properties will also be present since these were already groups. Therefore
+	this is a group.  By 
+	definition of $\phi$, all elements in $\phi^{-1}(L)$ will be in $G$, therefore, we have a subgroup of $G$>
+\end{proof}
+
+\begin{cor}[3.78]
+	Let $G$ and $H$ be groups. For any homomorphism $\phi:G \rightarrow H$, $Ker(\phi)$ is a subgroup of $G$. 
+\end{cor}
+\begin{proof}
+	By Thm. 3.77, this is a subgroup. Additionally, by Thm. 3.24, the group containing only the identity element
+	is a subgroup to the group that has that identity element. Since by the definition of kernel, $Ker(\phi)$ is a subgroup of $G$.
+	
+\end{proof}
+
+\end{document}
