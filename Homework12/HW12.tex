@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsfonts}
+
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Homework $12$}
+\author{Jeremy  Benedek}
+\date{April 17, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{ex}[3.79]
+Classify each of the following homomorphisms as a monomorphism, an epimorphism, an isomorphism, or none of these special types of homomorphisms. 
+\begin{enumerate}
+\item $\phi: \mathbb{Z}_{12} \rightarrow \mathbb{Z}_{24}$ defined by $\phi( [a]_{12} ) = [2a]_{24}$
+\item $\phi: \mathbb{Z} \rightarrow \mathbb{Z}_{9}$ defined by $\phi(a) = [3a]_{9}$
+\item $\phi: \mathbb{Z}_{6} \rightarrow \mathbb{Z}_{3}$ defined by $\phi( [a]_{6} ) = [a]_{3}$
+\item $\phi: \mathbb{Z}_{n} \rightarrow \mathbb{Z}_{n}$ defined by $\phi( [a]_{n} ) = [-a]_{n}$
+\end{enumerate}
+\end{ex}
+\begin{solution}
+	\begin{enumerate}
+	  \item Monomorphism as the function is 1-1, so the domain maps to the image.
+	  \item Homomorphism as the function is neither 1-1 or onto. 
+	  \item Epimorphism as the function if onto but not 1-1. 
+	  \item Isomorphic as the function is 1-1 and onto.
+	\end{enumerate}
+
+\end{solution}
+
+\begin{thm}[3.83]
+For every natural number $n$, the two groups $(C_n, \oplus_n)$ and $(\mathbb{Z}_n, \oplus)$ are isomorphic\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[3.84]
+Let $\phi: G \rightarrow H$ be an isomorphism. Then $\phi^{-1} : H \rightarrow G$ is an isomorphism.\end{thm}
+\begin{proof}
+  Since $\phi$ is isomorphic, and therefore onto, for every $h \in H$ there exists some $g \in G$ such tat $\phi^{-1}(h) = g$. Assume
+
+  Let $h_1, h_2 \in H$ and $g_1, g_2 \in G$. $\phi$ is injective since $\phi^{-1}(h_1) = $
+\end{proof}
+
+\begin{thm}[3.86]
+Let $G$ be a group with an element $g$. Define $\phi_g : G \rightarrow G$ by $\phi_g(h) = ghg^{-1}$. 
+Then $\phi_g : G \rightarrow G$ is an isomorphism called conjugation by $g$.\end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[3.87]
+Let $\phi : G \rightarrow H$ be a homomorphism. The $\phi$ is a monomorphism if and only if $Ker(\phi) = \{ e_G \}$. 
+In particular, $\phi$ is an isomorphism if and only if $Im(\phi) = H$ and $Ker(\phi) = \{ e_G\}$. \end{thm}
+\begin{proof}
+    Write your proof here.
+\end{proof}
+
+\begin{thm}[3.89]
+Let $k$ and $n$ be natural numbers. The map $\phi : \mathbb{Z}_n \rightarrow \mathbb{Z}_n$ defined by $\phi( [a]_n ) = [ka]_n$ is a homomorphism.\end{thm}
+\begin{proof}
+  $\phi$ respects the product as: $\phi( [a]_n ) + \phi( [b]_n ) = [ka]_n + [kb]_n = [ka + kb]_n = [k(a+b)]_n$ and
+  $phi( [a]_n ) + \phi( [b]_n ) = \phi( [a+b]_n ) = [k(a+b)]_n$
+  $\phi$ is well defined as: Assume $[a]_n = [b]_n$ and $a=b+jn, j\in \mathbb{Z}$ $[ka]_n = [kb]_n \\ [k(b+jn)]_n = [kb + kjn]_n = [kb]_n$
+  $\phi$ is a homomorphism.
+\end{proof}
+
+\begin{ex}[3.90]
+Make and prove a conjecture that gives necessary and sufficient conditions on the natural numbers $k$ and $n$ to conclude that
+ $\phi : \mathbb{Z}_n \rightarrow \mathbb{Z}_n$ defined by $\phi( [a]_n ) = [ka]_n$ is an isomorphism. 
+Use this insight to show that there are several different isomorphisms $\phi : \mathbb{Z}_{12} \rightarrow \mathbb{Z}_{12}$  \end{ex}
+\begin{solution}
+	My conjecture is there must no common factors between $k$ and $n$. Using this insight, there are many isomorphisms since you set $n=12$, so 
+	$k$ could equal $5,7,11$.
+\end{solution}
+
+\begin{ex}[3.91]
+1. Use conjugation to find two different isomorphisms from $D_4$ to $D_4$. 
+\\ 2. Why does conjugation not give any interesting isomorphisms from $\mathbb{Z}_n$ to itself?
+\end{ex}
+\begin{solution}
+	1. If $g=R_0$ and $g^{-1} = R_0$ that would be an isomorphism. Also, if $g=R_{180}$ and $g^{-1} = R_{180}$ that would also be an isomorphism.
+	\\ 2. There are no interesting isomorphisms since the commutative property present, and by rearranging terms, you find $g*g^{-1}*h$ and $g*g^{-1}$ 
+	is the identity element, so there are no interesting isomorphisms since you $h*e = h$
+\end{solution}
+
+\end{document}
