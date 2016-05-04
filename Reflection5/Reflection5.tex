@@ -1,0 +1,290 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+
+% Options for amsthm
+\newtheorem*{thm}{Theorem}
+\newtheorem*{ex}{Exercise}
+\newtheorem*{cor}{Corollary}
+\newtheorem{lem}{Lemma}
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\renewcommand{\qedsymbol}{}\end{proof}}
+
+\title{Final Reflection}
+\author{Jeremy Benedek}
+\date{May 3, 2016}
+
+\begin{document}
+\maketitle
+
+\begin{description}
+	\item[Part 1: What are you proud of?] \hfill \\
+	  I am proud of the skill of understanding abstract definitions that I have gained. This was (and still is) a challenge, but
+	  abstract definitions are not going away, so I am proud I have made significant strides with improvement in this skill. I am proud of
+	  my time management skills that I have honed throughout this course. At the beginning of the course, I remember putting off the homeworks
+	  until the last minute, and that didn't work to well; so I am glad I adapted and changed my work-flow and study habits by working on the 
+	  homework before it was due. Additionally, I am proud of my independence. This class was unlike other classes I have taken, where we learn
+	  the material at home and reinforce our knowledge with our peers during class. Since we are learned the material at home, I am proud that if
+	  a topic didn't make sense, I would go on YouTube and watch a video and gain a better understanding on my own. 
+
+
+
+	\item[Part 2: Personal Time Capsule] \hfil \\
+
+          In ten years, I will remember the argumentation skills that we used, such as being clear, thorough, and concise, while
+	  still giving justification. This skill, while it may not appear in a math context again for
+	  me, will definitely appear in future classes as I argue and justify my views, both in writing and in class discussions. While my 
+	  knowledge of groups and graphs may not be used much, my critical thinking and logical skills where be used for years to come. This
+	  class required me to challenge all claims, and prove them myself. This required me to attack the problem and think of a plan for 
+	  me to use in a proof. This mentality will be something I remember. Finally, my \LaTeX skills are definitely something I will remember.
+	  As a Computer Science student, I appreciate the power and utility of \LaTeX, so this will definitely be something I continue to learn
+	  and use. To be honest, typesetting the proofs for the homework was my favorite part of this class. 
+
+
+
+
+	\item[Part 3: Fifteen Polished Proofs] \hfil \\
+		Theorem 2.10 is a proof who's result is mathematically important. This idea of total degree being even does came up a some furthur exercises. Additionally, Now that I know a Euler Circuit requires all verticies to be of even, positive degree, this has made me wonder what is so special with even numbers, because we are seeing 2 interesting problems (what is a graph, and what is a Euler circuit) hinge on even numbers.
+		
+		\begin{thm}2.10     The total degree of any graph is even.\end{thm}
+ 		 \begin{proof}  A graph is a pair of sets, one set contains all vertices in the graph, and the other is a set of all edges in the graph.
+       				The degree of a vertex is the number of times a vertex is an endpoint for any edge in the graph. 
+				The total degree of a graph is the sum of the degree of all vertices in the graph. 
+				An edge contains 2 endpoints. 
+				2 times any number is even, so 2 times the number of edges is even 
+				The total degree of the graph is 2 times the number of edges, since each has 2 endpoints, and each endpoint is a vertex. 
+       				Therefore, the toal degree is even.  \end{proof}
+
+		Theorem 2.25 has a interesting and important argument, the idea of an equivalance relation and various proporties of relations.	
+		Personally, I have previous experience with relations, and I like doing work involving them, so this is part of the reason the argument
+		is interesting. 
+
+		\begin{thm}[2.25]
+		          Let $G$ be a graph with vertices $u$, $v$, and $w$.
+        	  \begin{enumerate}
+        	    \item The vertex $v$ is connected to itself.
+       		    \item If $u$ is connected to $v$ and $v$ is connected to $w$, then $u$ is connected to $w$.
+        	    \item If $v$ is connected to $w$, then $w$ is connected to $v$.
+         	 \end{enumerate}
+ 		 \end{thm}
+ 		  \begin{proof}
+        		$v$ is connected to itself if there is a walk from $v$ to $v$. By definition 2.6, $W: v$ is a walk. So $v$ is connected to itself. \qed
+         		 \\
+         		Assume $u$ is connected to $v$ and $v$ is connected to $w$. So, there is a walk between $u$ and $v$ and another walk between $v$ and $w$. 
+			So, $W: v_1, e_1, ... v_j, e_j, v_k, e_k, v_l, e_l$, where $v_j$     is vertex u, 
+			$v_k$ is vertex v, $v_l$ is vertex w. $W$ contains a walk between $u$ and $v$ and a 
+			walk between $v$ and $w$ and finally, a walk between $u    $ and $w$,  so $u$ is connected to $w$. \qed
+         		 \\
+         		Assume $v$ is connected to $w$, so there is a walk between $v$ and $w$. 
+			Since a walk is a finite sequence of adjacent vertices and edges, being adjacent does not depend on order, 
+			just that they are next to each other in some direction. For an endpoint, the order of the vertices do not matter.
+			So, if there is a walk between $v$ and $w$, then there is a walk between $w$ and $v$. Therefore, $w$ is connected to $v$, 
+			since $v$ is connected to $w$.
+ 		\end{proof}
+	
+		My proof for Corollary 2.11 has good style. This Corollary was proven using proof by contradiction, definitions were unpacked
+		(especially the definitions of even and odd), the arithmetic I do is clean and easy to follow. All three characteristics are 
+		characteristics of good style.
+	
+		\begin{thm}Corollary 2.11     Let $G$ be a graph, then the number of vertices in $G$ with odd degree is even. \end{thm}
+ 		\begin{proof}    According to Theorem 2.10,  the total degree of $G$ is even 
+ 			Assume towards contradiction that $G$ has an odd amount vertices with odd degree
+  			An even number can be represented as $2n$ where $n \in \mathbb{Z}$ an odd number can be represented as $2n + 1$ where 
+			$n \in \mathbb{Z}$
+			The total degree of $G$ is the sum of the degree of all vertices, both with even degree and odd degree.
+			A vertex with even degree has degree of form $2n$. A vertex with odd degree has degree of form $2n + 1$  
+  			So the total degree of $G$ is $2n\cdot k + (2n+1)\cdot j$ where $k$ is the amount of verticies with even degree and $j$
+			is the amount of vertices with odd degree.
+  			Using proporties of even and odd numbers, the addition of 2 even numbers is even, and the addition of an even number 
+			and an odd number is odd. Additionally, an even number times an even number is even, 
+			and an even number times an odd number is odd.
+			Since there is an odd number of vertices with odd degree $j$ is odd, so $(2n+1)\cdot j$ is odd. 
+			This number, added to $2n\cdot k$, which is even, will result in an odd number. Therefore, the 
+			total degree of $G$ is odd, which contradicts Theorem 2.10, so $G$ must have an even amount of verticies with odd degree.
+  		\end{proof}
+
+\begin{cor}[2.58]
+	    	If $G$ is a tree with $n$ vertices, then $G$ has $n - 1$ edges.
+		      \end{cor}
+		\begin{proof}
+			A tree is a connected, planar graph, by Theorem 2.46, so by Theorem 2.55, $|V| - |E| + |F| = 2$. Since $G$ has $n$ vertices, 
+			let $n$ = $V$, so
+			$n - |E| + 1 = 2$. Since $G$ is a tree and therefore is planar, it only has 1 face, the unbounded face. $n - 1 = |E|$. Therefore the number of edges is $n - 1$.
+		\end{proof}
+		
+		My proof for Corollary 2.58 has a interesting result since this theorem defines the number of edges in a tree, in relation to the number
+		of vertices. 
+	
+		\begin{cor}[2.61]
+		  	The graph $K_5$ is not planar.
+		\end{cor}
+		\begin{proof}
+			Assume towards contradiction that $K_5$ to be a planar graph. Since $K_5$ is a complete graph, it contains no loops and 
+			has unique edges for each pair of distinct vertices. So by Theorem 2.59, If $|V| \geq 3$, then $|E| \leq 3|V| - 6.$
+			$K_5$ has 5 vertices and 10 edges. $10 \nleq 3*5 - 6$ contradiction, so $K_5$ is not planar. 
+		\end{proof}
+	
+		Corollary 2.61 has an important argument, that $K_5$ is planar. $K_5$ is a graph that we have been looking at since the
+		start of the semester, and it important that we can now definitely proved that the 5-station problem is not possible. The ability
+		to determine if a graph is planar in also important. 
+
+		\begin{thm}[2.29]
+		  	Let $G$ be a graph. Let $C$ be a subgraph of $G$ that consists of the vertices and edges that belong to a circuit in $G$. Then $deg_C(v)$ is 
+			even for every vertex $v$ of $C$.
+	       \end{thm}
+	       \begin{proof}
+			 Let $C$ be a subgraph of $G$ that consists of the vertices and edges that belong to a circuit in $G$.
+			 Consider taking a walk through $C$. Since $C$ is a circuit, by definition a walk must end at the same vertex it began at, and
+			 edges can not be repeated. So, for every time you walk into a vertex, 
+		 	 you must walk away from the vertex on another edge, since you cannot repeat edges and must return at the starting vertex, so
+			 the walk cannot end at that vertex, unless it is the first vertex in the walk. 
+			 So for every passage through a vertex, there  must be a multiple of  
+			 2 edges with endpoints at that vertex (one edge could be used for entry, and the other for exiting the vertex, and 
+			 this process could be repeated $m$ times if the degree of the vertex is $2m$.
+			 Therefore, for $n$ amount of passages through a vertex, 
+			 there are $2n$ edges with endpoints at that vertex, so the degree of that vertex is $2n$, which is even since 2 times a 
+			 integer is even.
+		\end{proof}
+						       
+		My proof for Theorem 2.29 has 3 characteristics of good style in the exposition. First, I clearly define the notation and variables
+		used in the proof, such as $C$ and $G$. Second, I provide definitions of terms, such as circuit. Lastly, my proof is concise and
+		does not contains information that is not used. These are all examples of good style. 
+
+
+\begin{thm}[2.82]
+	  	Any planar graph with no loops is 6-colorable.
+	      \end{thm}
+	      \begin{proof}
+			Following Theorem 2.63, any planar graph with no loops has a vertex of degree at most 5. Using Theorem 2.79,  graph $G$ is $m+1$ colorable, with $m$ being the biggest degree of a vertex.
+			Since 5 is the largest degree of a vertex in a planar graph, it is 5+1, or 6-colorable.
+	      \end{proof}
+			This proof has a result that is important, since the result of the proof is so overarching. The result of this proof
+			relates to all planar graphs, so since we proved this, we now know something about whole grouping of graphs.
+
+			\hfil \\
+
+		\begin{thm}[2.80]
+		  	Consider a graph, $G$, that is built from a subgraph, $H$, by adding one new vertex, $v$, and new edges that connect the new vertex to vertices in $H$.
+			If the subgraph $H$ has a 5-coloring such that the new vertex, $v$, is 
+			not adjacent to vertices of all five colors, then $G$ is 5-colorable.
+		\end{thm}
+		\begin{proof}
+			Consider vertex $v$, which is the vertex added to graph $H$ (along with edges) that creates $G$. If $H$ is 5-colorable, and $v$ is not adjacent to all five colors, then if you assign $v$ to be a color
+			that is not the color of an adjacent vertex, you will maintain the colorability of the graph. So, $G$ is still 5-colorable.
+		 \end{proof}
+			This proof has a interesting argument, since you start by knowing something about one graph, and the claim also claims
+			that you can build up that graph by adding a vertex, and get a similar result. More specifically, this argument
+			is interesting since by changing the graph you start with, you are not changing the result (if you follow the restrictions
+			that were put on in the claim of this proof). 
+
+
+		\begin{thm}[2.78]
+		  	For any natural number, $n$, let $G = (V,E)$ be a graph with $|V| \leq n$ that has no loops. Then $G$ is n-colorable. 
+	      \end{thm}
+	      \begin{proof}
+			Take graph $G$ and assign each vertex a distinct color. Since $G$ has no loops, no 2 adjacent vertices have the same color.
+			So each vertex has a different color, and no vertex is adjacent to itself. 
+			$G$ is now n-colorable, if $n$ is the number of colors used and $|V| \leq n$. 
+	      \end{proof}
+			This exposition has three characteristics of good style, it is short and concise, it explains the notation and variables used,
+			and it restates the claim, including the restrictions that the claims placed upon it.
+
+
+My proof for Thm. 3.24 has a result that is important because this proof shows us that the smallest group possible is the group
+		containing just the identity element. 
+	  \begin{thm}[3.24]
+	      	Let $G$ be a group with identity element $e$. Then $\{e\}$ is a subgroup of $G$. 
+
+		\end{thm}
+	      \begin{proof}
+	      $\{e\}$ is a group since it has an identity element, $e$, and all members have an inverse, in this case with only one element, $\{e\}$ has
+	an inverse of $\{e\}$. The associativity and well-defined requirements of a group are inherited from the $G$, so it follows that $\{e\}$ also
+	have these characteristics. This will be closed since it is the identity element by itself, so regardless of the operation, $e*e$ will
+	have a result always in $\{e\}$. Therefore, this is a group, and since all members are in $G$, this is a subgroup of $G$.
+
+	      \end{proof}
+
+	      My proof for Thm. 3.25 has an argument that is important an interesting because the argument that a group is a subgroup of itself 
+	      has further implications and affect my interpretation and understanding of a subgroup. 
+	      This argument is interesting because it implies that every group will have at least one subgroup, itself. 
+		\begin{thm}[3.25]
+			Let $G$ be a group. Then $G$ is a subgroup of $G$. 
+
+		\end{thm}
+		\begin{proof}
+		 Since $G$ is a group, $G$ is closed, well-defined, associative, has an identity element, and all members have an inverse. So it follows
+	that $G$ is a group. Since $G$ is the same group as $G$, all members of $G$ exist in $G$, so $G$ is a subgroup of $G$.
+
+		\end{proof}
+
+
+		My proof for Thm. 3.27 has 3 characteristics of good style. First, my proof is concise and straight to the point.
+		Second, I use relevant definitions by showing it is a group and thus follows all 5 parts of the definition of a group.
+		Lastly, my notation is clear and I do not introduce an extraneous variables. 
+		\begin{thm}[3.27]
+		  	Let $G$ be a group and $g$ be an element of $G$. Then $\langle g \rangle$ is a subgroup of $G$. 
+
+	      
+		\end{thm}
+	      \begin{proof}
+	      All members of $\langle g \rangle$ are members of $G$ since $\langle g \rangle$ is formed by using the members of $G$. $\langle g \rangle$
+	is also a group since it fits the definition of a group by having all 5 requirements; it is associative and well-defined since 
+	that is inherited from the bigger group. The identity element 
+	is present in this subgroup since $e = g^0$, since this is a generated subgroup.  
+	There is an inverse for all elements since the elements
+	are $g^{\pm n}$. Lastly, this is closed as operations between members of the group will have the result also be in the group. So this is a 
+	group. 
+	      \end{proof}
+
+
+	      
+My proof for Theorem 3.89 has an important result, as the result gives us many functions that we now know are homomorphisms. 
+
+
+\begin{thm}[3.89]
+Let $k$ and $n$ be natural numbers. The map $\phi : \mathbb{Z}_n \rightarrow \mathbb{Z}_n$ defined by $\phi( [a]_n ) = [ka]_n$ is a homomorphism.\end{thm}
+\begin{proof}
+  $\phi$ respects the product as: $\phi( [a]_n ) + \phi( [b]_n ) = [ka]_n + [kb]_n = [ka + kb]_n = [k(a+b)]_n$ and
+  $\phi( [a]_n ) + \phi( [b]_n ) = \phi( [a+b]_n ) = [k(a+b)]_n$
+  $\phi$ is well defined as: Assume $[a]_n = [b]_n$ and $a=b+jn, j\in \mathbb{Z}$ $[ka]_n = [kb]_n \\ [k(b+jn)]_n = [kb + kjn]_n = [kb]_n$
+  $\phi$ is a homomorphism.
+\end{proof}
+
+
+
+
+My proof for Theorem 3.71 has an important argument, as the argument that the mapping of one identity elements goes to the identity element in the codomain. This argument is important is subsequent proofs about homomorphisms. 
+
+
+\begin{thm}[3.71]
+	If $\phi : G \rightarrow H$ is a homomorphism, the $\phi(e_G) = e_H$. 
+\end{thm}
+\begin{proof}
+	Chose $g$ in $G$.  $\phi(g) = \phi(g *_G e_G) = \phi(g) *_H \phi(e_G). \\
+	\phi(g) * e_H = \phi(g) *_H \phi(e_G)$. By the cancellation law, $e_H = \phi(e_G)$, so $\phi(e_G) = e_H$
+\end{proof}
+
+
+
+My proof for Theorem 3.73 show characteristics of good style in that the proof in concise and doesn't contain "fluff," I use and cite previous theorems, and I use and explain definitions in my proof.
+
+\begin{thm}[3.73]
+	Let $G$ and $H$ be groups, let $K$ be a subgroup of the group $G$, and let $\phi : G \rightarrow H$ be a homomorphism, the
+	$\phi(K)$ is a subgroup of $H$. 
+\end{thm}
+\begin{proof}
+  Since $\phi$ is a homomorphism, the function is closed. Since $K$ is a  group, the well-defined as associative properties are present in $\phi(K)$. By
+	Theorem 3.72, the inverse element is also present. Additionally, by Theorem 3.71, the identity element is also found, so this is a group.
+	Since all members of $\phi(K)$ will be found in $H$ since the definition of $\phi$, this is a subgroup of $H$.
+\end{proof}
+
+
+
+\end{description}
+\end{document}
